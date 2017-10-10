@@ -1,0 +1,1 @@
+miután futtatod run al, stop olni kell
