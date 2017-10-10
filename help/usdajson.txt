@@ -1,0 +1,3 @@
+https://api.nal.usda.gov/ndb/V2/reports?ndbno=11090&type=f&format=json&api_key=eWUqit9rFjvSux8OISTkd7ls5ymqQSP11qJJ1J0T
+ndbno=value
+api_key=sentingmail

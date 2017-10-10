@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+	/*$.getJSON('https://api.nal.usda.gov/ndb/V2/reports?ndbno=11090&type=f&format=json&api_key=eWUqit9rFjvSux8OISTkd7ls5ymqQSP11qJJ1J0T', function(data){
+		console.log(data);
+	});*/
+	var obj;
+	$.ajax({
+		url: 'https://api.nal.usda.gov/ndb/V2/reports?ndbno=11090&type=f&format=json&api_key=eWUqit9rFjvSux8OISTkd7ls5ymqQSP11qJJ1J0T',
+		dataType: 'json',
+		type: 'get',
+		cache: false,
+		success: function(data){
+		
+			//var parsed = JSON.parse(data);
+			console.log(data['foods']['0']['food']['nutrients']['1']['name']);
+			console.log(data['foods']);
+		}
+	});
+</script>
+<p>WTF</p>
+
+
+
+</body>
+</html>
