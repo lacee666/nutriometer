@@ -1,4 +1,4 @@
-package com.nutriometer;
+package com.nutriometer.model;
 
 import lombok.Data;
 import javax.persistence.*;

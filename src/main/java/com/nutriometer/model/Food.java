@@ -1,4 +1,4 @@
-package com.nutriometer;
+package com.nutriometer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,15 +9,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
 
+@Entity
 @Table(name = "FOOD")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+// this class represents a food, float value/100g
 public class Food extends BaseEntity {
-    // 100g food
+
     //name
     @Column(nullable = false, unique = true)
     private String foodName;
