@@ -1,4 +1,4 @@
-package com.model;
+package com.nutriometer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
+
 @Table(name = "FOOD")
 @Data
 @AllArgsConstructor
