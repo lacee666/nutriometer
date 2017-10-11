@@ -426,7 +426,7 @@
 	}
 	#banner 
 	{
-		background-image:url(../templates/foodfront.jpg);
+		background-image:url(foodfront.jpg);
 		width: 100%;
 		z-index: 0;
 

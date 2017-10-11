@@ -181,30 +181,7 @@
 /*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
-	input[type=text], input[type=password]
-	{
-		display: inline-block;
-		padding: 0em 3em;
-		background: #FFFFFF;
-		line-height: 4em;
-		text-decoration: none;
-		font-weight: 400;
-		font-size: 1em;
-		color: #000000;
-	}
-	input[type=submit], input[type=reset]
-	{
-		display: inline-block;
-		padding: 0em 3em;
-		background: #009E2D;
-		letter-spacing: 0.20em;
-		line-height: 4em;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: 400;
-		font-size: 1em;
-		color: #FFF;
-	}
+	
 	
 	.button[type=reset]
 	{
@@ -434,7 +411,7 @@
 	
 	#banner .title h2
 	{
-		color: #FFF;
+		color: #FFFFFF;
 	}
 
 	#banner .title .byline
@@ -447,9 +424,9 @@
 		margin-top: 3em;
 		background: #009E2D !important;
 	}
-	#banner	.titleWhite
+	#banner	.titleWhite h1
 	{
-		color: #F00FFF;
+		color: #FFFFFF;
 	}
 
 /*********************************************************************************/
@@ -573,7 +550,11 @@
 	#extra
 	{
 		overflow: hidden;
-		padding: 5em 0em;
+		padding: 7em 0em 5em 0em;
+		background: #FFFFFF;
+		background-size: cover;
+		text-align: center;
+		color: rgba(0,0,0,.9);
 	}
 	
 	#extra .title
@@ -595,4 +576,37 @@
 	}
 
 
+/*********************************************************************************/
+/* Login, register                                                               */
+/*********************************************************************************/
 
+#login input[type=text], input[type=password]. input[type=username]
+	{
+		display: inline-block;
+		padding: 0em 3em;
+		background: #FFFFFF;
+		line-height: 4em;
+		text-decoration: none;
+		font-weight: 400;
+		font-size: 1em;
+		color: #000000;
+		float: right;
+	    
+	}
+#login	input[type=submit], input[type=reset]
+	{
+		display: inline-block;
+		padding: 0em 3em;
+		background: #009E2D;
+		letter-spacing: 0.20em;
+		line-height: 4em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1em;
+		color: #FFF;
+	}
+form {
+    display: inline-block;
+    text-align: center;
+}
