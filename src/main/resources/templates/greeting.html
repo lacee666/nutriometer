@@ -45,59 +45,14 @@ Released   : 20140309
 	</div>
 	<div id="banner">
 		<div class="titleWhite">	
-			<h1>Sign in here</h1>
+			<h1>Greetings</h1>
 			<br/>
 		</div>
-		<div class="container">
-			<div id="login">
-				<form action="#" th:action="@{/login}" th:object="${user}" method="post">
-										
-					<div id="username">
-						<label for="username">Username:</label>
-						<input type="text" name="username" placeholder="username" th:field="*{username}" />
-					</div>
-					<br/>
-					<div id="password">
-						<label for="password">Password:</label>
-						<input type="password" name="password" placeholder="password" th:field="*{password}" />
-					</div>
-					<br/>
-					<input type="submit" value="Submit" />
-					<input type="reset" value= "Cancel"/>
-				</form>
-			</div>
+		<div class="container">		
+				<h1><span th:text="${user.username}" ></span></h1>
 		</div>
 	</div>
-	<div id="extra" class="container">
-		<div class="title">
-			<h2>Don't have an account?</h2>
-			<span class="byline">Register here!</span> 
-		</div>
-			<div class="container">	
-				<div id="login">
-					<form action="#" th:action="@{/register}" th:object="${user}" method="post">
-						<div id="username">
-							<label for="username">E-mail:</label>
-							<input type="text" name="email" placeholder="email" th:field="*{email}" />
-						</div>
-						<br/>
-						<div id="username">
-							<label for="username">Username:</label>
-							<input type="text" name="username" placeholder="username" th:field="*{username}" />
-						</div>
-						<br/>
-						<div id="password">
-							<label for="password">Password:</label>
-							<input type="password" name="password" placeholder="password" th:field="*{password}" />
-						</div>
-						<br/>
-						<input type="submit" value="Submit" />
-						<input type="reset" value= "Cancel" />
-					</form>
-				</div>
-			</div>
-
-	</div>
+	
 </div>
 <div id="copyright" class="container">
 	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>

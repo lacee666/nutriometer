@@ -17,26 +17,23 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-    @GetMapping("/index")
-    public String login(Model model) {
-        model.addAttribute(new User());
+   @GetMapping("/index")
+    public String index(Model model) {
+        model.addAttribute("user", new User());
         return "index";
     }
-
-    @PostMapping("/index")
-    public String login(@ModelAttribute User user, Model model) {
-        if (userService.isValid(user)) {
-            return redirectToGreeting(user);
-        }
-        model.addAttribute("loginFailed", true);
-        return "index";
-    }
-
     @GetMapping("/register")
-    public String register(Model model) {
+    public String registerGet(Model model) {
         model.addAttribute("user", new User());
         return "register";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute User user, Model model) {
+       /* if (userService.isValid(user)) {
+            return redirectToGreeting(user);
+        }*/
+        return "greeting";
     }
 
     @PostMapping("/register")
@@ -44,10 +41,10 @@ public class UserController {
         user.setRole(USER);
         userService.register(user);
 
-        return redirectToGreeting(user);
+        return "greeting";
     }
 
     private String redirectToGreeting(@ModelAttribute User user) {
-        return "redirect:/user/greet?name=" + user.getUsername();
+        return "redirect:/greeting?name=" + user.getUsername();
     }
 }
