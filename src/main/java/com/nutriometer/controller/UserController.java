@@ -27,24 +27,35 @@ public class UserController {
         model.addAttribute("user", new User());
         return "register";
     }
-
-    @PostMapping("/login")
-    public String login(@ModelAttribute User user, Model model) {
-       /* if (userService.isValid(user)) {
-            return redirectToGreeting(user);
-        }*/
+    @GetMapping("/greeting")
+    public String greeting(Model model){
         return "greeting";
     }
 
-    @PostMapping("/register")
-    public String register(@ModelAttribute User user) {
-        user.setRole(USER);
-        userService.register(user);
+    @PostMapping("/login")
+    public String login(@ModelAttribute User user, Model model) {
+        if (userService.isValid(user)) {
+            System.out.println("PagChomp");
+            return redirectToGreeting(user);
+        }
+        model.addAttribute("loginFailed", true);
+        System.out.println("OMEGALUL");
+        return "register";
+    }
 
+    @PostMapping("/register")
+    public String register(@ModelAttribute User user, Model model) {
+        user.setRole(USER);
+        try{
+            userService.register(user);
+        } catch(Exception e){
+            model.addAttribute("registerFailed", true);
+            return "register";
+        }
         return "greeting";
     }
 
     private String redirectToGreeting(@ModelAttribute User user) {
-        return "redirect:/greeting?name=" + user.getUsername();
+        return "redirect:greeting?name=" + user.getUsername();
     }
 }

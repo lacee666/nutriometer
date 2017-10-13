@@ -46,12 +46,13 @@ Released   : 20140309
 	<div id="banner">
 		<div class="titleWhite">	
 			<h1>Sign in here</h1>
+			<h1 th:if="${loginFailed}">Invalid user data!</h1>
 			<br/>
 		</div>
 		<div class="container">
 			<div id="login">
+
 				<form action="#" th:action="@{/login}" th:object="${user}" method="post">
-										
 					<div id="username">
 						<label for="username">Username:</label>
 						<input type="text" name="username" placeholder="username" th:field="*{username}" />
@@ -71,11 +72,14 @@ Released   : 20140309
 	<div id="extra" class="container">
 		<div class="title">
 			<h2>Don't have an account?</h2>
-			<span class="byline">Register here!</span> 
+			<span class="byline">Register here!</span>
+			<h2 th:if="${registerFailed}">Email or username already exists!</h2>
 		</div>
 			<div class="container">	
 				<div id="login">
+
 					<form action="#" th:action="@{/register}" th:object="${user}" method="post">
+
 						<div id="username">
 							<label for="username">E-mail:</label>
 							<input type="text" name="email" placeholder="email" th:field="*{email}" />
