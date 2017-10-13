@@ -17,9 +17,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-   @GetMapping("/index")
+    @GetMapping("/index")
     public String index(Model model) {
-        model.addAttribute("user", new User());
+        //model.addAttribute("user", new User());
         return "index";
     }
     @GetMapping("/register")
@@ -29,17 +29,16 @@ public class UserController {
     }
     @GetMapping("/greeting")
     public String greeting(Model model){
+
         return "greeting";
     }
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, Model model) {
         if (userService.isValid(user)) {
-            System.out.println("PagChomp");
-            return redirectToGreeting(user);
+            return "greeting";
         }
         model.addAttribute("loginFailed", true);
-        System.out.println("OMEGALUL");
         return "register";
     }
 
@@ -56,6 +55,6 @@ public class UserController {
     }
 
     private String redirectToGreeting(@ModelAttribute User user) {
-        return "redirect:greeting?name=" + user.getUsername();
+        return "redirect:greeting?username=" + user.getUsername();
     }
 }

@@ -8,8 +8,8 @@ import javax.persistence.*;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id;
 
     @Version
     private int version;

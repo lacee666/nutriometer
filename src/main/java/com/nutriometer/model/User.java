@@ -28,7 +28,7 @@ public class User extends BaseEntity {
     private String password;
 
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = false)
     private Role role;
 
     public enum Role {
