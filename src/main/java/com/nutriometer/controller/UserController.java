@@ -18,18 +18,29 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/index")
-    public String index(Model model) {
-        //model.addAttribute("user", new User());
+    public String index() {
         return "index";
+    }
+    @GetMapping("/foodsearch")
+    public String foodSearch() {
+        return "foodsearch";
+    }
+    @GetMapping("/recipesearch")
+    public String recipeSearch() {
+        return "recipesearch";
     }
     @GetMapping("/register")
     public String registerGet(Model model) {
         model.addAttribute("user", new User());
         return "register";
     }
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        model.addAttribute("user", new User());
+        return "contact";
+    }
     @GetMapping("/greeting")
-    public String greeting(Model model){
-
+    public String greeting(){
         return "greeting";
     }
 

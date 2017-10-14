@@ -18,7 +18,7 @@ Released   : 20140309
 <meta name="description" content="" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
-<link href="../static/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -27,32 +27,20 @@ Released   : 20140309
 <body>
 <div id="wrapper">
 	<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<!-- <h1><a href="#">PlainDisplay</a></h1> --> 
-			 <form action="#" th:action="@{/user/login}" th:object="${user}" method="post">
-				<div id="username">
-					<label for="username">Username:</label>
-					<input type="text" name="username" placeholder="username" th:field="*{username}" />
-				</div>
-				<div id="password">
-					<label for="password">Password:</label>
-					<input type="password" name="password" placeholder="password" th:field="*{password}" />
-				</div>
-				<input type="submit" value="Submit!" />
-				<button type="reset">Cancel</button>
-			</form>
+		<div id="header" class="container">
+			<div id="logo">
+
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
+					<li><a href="#" accesskey="2" title="">Food Search</a></li>
+					<li><a href="recipesearch.html" accesskey="3" title="">Recipe Search</a></li>
+					<li><a href="register.html" accesskey="4" title="">Sign in/up</a></li>
+					<li><a href="contact.html" accesskey="5" title="">Contact Us</a></li>
+				</ul>
+			</div>
 		</div>
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Food Search</a></li>
-				<li><a href="#" accesskey="3" title="">Recipe Search</a></li>
-				<li><a href="#" accesskey="4" title="">About Us</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-			</ul>
-		</div>
-	</div>
 	</div>
 	<div id="banner">
 		<div class="container">
@@ -64,57 +52,186 @@ Released   : 20140309
 			</ul>
 		</div>
 	</div>
-	<div id="extra" class="container">
-		<div class="title">
-			<h2>Plan your diet</h2>
-			<span class="byline">Track your macros, create recipes and much more</span> </div>
-		<div id="three-column">
-			<div class="boxA">
-				<div class="box"> <span class="fa fa-cloud-download"></span>
-					<img src = "food1.jpg" width = "212" height = "147">
-					<p>Track everything! Protein, fat, calories, vitamins, minerals and much more!</p>
-				</div>
-			</div>
-			<div class="boxB">
-				<div class="box"> <span class="fa fa-cogs"></span>
-					<img src = "food2.jpg" width = "212" height = "147">
-					<p>Search for your ingredients and make your daily diet healthier than ever!</p>
-				</div>
-			</div>
-			<div class="boxC">
-				<div class="box"> <span class="fa fa-user"></span>
-					<img src = "food3.png" width = "212" height = "147">
-					<p> Make your own recipes and you can add them as a whole to your plan! Eat healthy and consciously!</p>
-				</div>
-			</div>
-		</div>
-		<ul class="actions">
-			<li><a href="#" class="button">Search for a food</a></li>
-		</ul>
-	</div>
+	
 	<div id="featured">
 		<div class="container">
 			<div class="title">
-				<h2>Fusce ultrices fringilla metus</h2>
-				<span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue</span> </div>
-			<p>This is <strong>PlainDisplay</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+				<h2>Search your food here</h2>
+				<br/>
+				<form>
+				  <input type="text" name="search" placeholder="Search.."></input>
+				  <input type="text" name="search" placeholder="Value(g).."></input>
+				</form>
+			</div>
 		</div>
 		<ul class="actions">
-			<li><a href="#" class="button">Etiam posuere</a></li>
+			<li><a href="#" class="button">Submit</a></li>
 		</ul>
 	</div>
+
 	<div id="page" class="container">
-		<div class="title">
-			<h2>Nulla luctus eleifend</h2>
-			<span class="byline">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span> </div>
-		<p> Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor.</p>
-		<ul class="actions">
-			<li><a href="#" class="button">Etiam posuere</a></li>
-		</ul>
+		<div class="tables">
+			<h2>Basics</h2>
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>g</th>
+					<th>DRV</th>
+				</tr>
+				<tr>
+					<th>Water</th>
+					<th>14</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Carbohydrates</th>
+					<th>15</th>
+					<th>13</th>
+				</tr>
+				<tr>
+					<th>Energy</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Calories</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Fiber</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Protein</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+			</table>
+			<hr/>
+			<h2>Fats</h2>
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>g</th>
+					<th>DRV</th>
+				</tr>
+				<tr>
+					<th>Fat</th>
+					<th>11</th>
+					<th></th>
+				</tr>
+				<tr>
+					<th>Saturated fat</th>
+					<th>14</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Monounsaturated fat</th>
+					<th>15</th>
+					<th>13</th>
+				</tr>
+				<tr>
+					<th>Polyunsaturated fat</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+			</table>
+			<hr/>
+			<h2>Vitamins</h2>
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>g</th>
+					<th>DRV</th>
+				</tr>
+				<tr>
+					<th>Vitamin A</th>
+					<th>14</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Vitamin B6</th>
+					<th>15</th>
+					<th>13</th>
+				</tr>
+				<tr>
+					<th>Vitamin B12</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Vitamin C</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Vitamin D</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Vitamin E</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Vitamin K</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+			</table>
+			<hr/>
+			<h2>Minerals</h2>
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>g</th>
+					<th>DRV</th>
+				</tr>
+				<tr>
+					<th>Calcium</th>
+					<th>14</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Iron</th>
+					<th>15</th>
+					<th>13</th>
+				</tr>
+				<tr>
+					<th>Magnesium</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Potassium</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Sodium</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Zinc</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+				<tr>
+					<th>Copper</th>
+					<th>0</th>
+					<th>11</th>
+				</tr>
+			</table>
+		</div>
+		
 	</div>
-</div>
-<div id="copyright" class="container">
-	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	<div id="copyright" class="container">
+		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	</div>
 </div>
 </body>
 </html>
