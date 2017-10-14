@@ -20,7 +20,7 @@ Released   : 20140309
 <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-
+<script src="ingredientloader.js"></script>
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -65,24 +65,31 @@ Released   : 20140309
 			</div>
 		</div>
 		<ul class="actions">
-			<li><a href="#" class="button">Submit</a></li>
+			<li><a href="" class="button" onClick="addElement();return false">Submit</a></li>
 		</ul>
 	</div>
 
 	<div id="page" class="container">
-		<div class="tables">
+		
+		<div class="details">
+			<h1>Details</h1>
+			<hr/>
 			<h2>Basics</h2>
+			<hr/>
 			<table style="width:100%">
-				<tr>
-					<th>Name</th>
-					<th>g</th>
-					<th>DRV</th>
-				</tr>
-				<tr>
-					<th>Water</th>
-					<th>14</th>
-					<th>11</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>g</th>
+						<th>DRV</th>
+					</tr>
+					<tr>
+						<th>Water</th>
+						<th>14</th>
+						<th>11</th>
+					</tr>
+				</thead>
+				<tbody>
 				<tr>
 					<th>Carbohydrates</th>
 					<th>15</th>
@@ -108,126 +115,159 @@ Released   : 20140309
 					<th>0</th>
 					<th>11</th>
 				</tr>
+				</tbody>
 			</table>
 			<hr/>
 			<h2>Fats</h2>
+			<hr/>
 			<table style="width:100%">
-				<tr>
-					<th>Name</th>
-					<th>g</th>
-					<th>DRV</th>
-				</tr>
-				<tr>
-					<th>Fat</th>
-					<th>11</th>
-					<th></th>
-				</tr>
-				<tr>
-					<th>Saturated fat</th>
-					<th>14</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Monounsaturated fat</th>
-					<th>15</th>
-					<th>13</th>
-				</tr>
-				<tr>
-					<th>Polyunsaturated fat</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>g</th>
+						<th>DRV</th>
+					</tr>
+					<tr>
+						<th>Fat</th>
+						<th>11</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Saturated fat</th>
+						<th>14</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Monounsaturated fat</th>
+						<th>15</th>
+						<th>13</th>
+					</tr>
+					<tr>
+						<th>Polyunsaturated fat</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+				</tbody>
 			</table>
 			<hr/>
 			<h2>Vitamins</h2>
+			<hr/>
 			<table style="width:100%">
-				<tr>
-					<th>Name</th>
-					<th>g</th>
-					<th>DRV</th>
-				</tr>
-				<tr>
-					<th>Vitamin A</th>
-					<th>14</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Vitamin B6</th>
-					<th>15</th>
-					<th>13</th>
-				</tr>
-				<tr>
-					<th>Vitamin B12</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Vitamin C</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Vitamin D</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Vitamin E</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Vitamin K</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>g</th>
+						<th>DRV</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Vitamin A</th>
+						<th>14</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Vitamin B6</th>
+						<th>15</th>
+						<th>13</th>
+					</tr>
+					<tr>
+						<th>Vitamin B12</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Vitamin C</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Vitamin D</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Vitamin E</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Vitamin K</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+				</tbody>
 			</table>
 			<hr/>
 			<h2>Minerals</h2>
+			<hr/>
 			<table style="width:100%">
-				<tr>
-					<th>Name</th>
-					<th>g</th>
-					<th>DRV</th>
-				</tr>
-				<tr>
-					<th>Calcium</th>
-					<th>14</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Iron</th>
-					<th>15</th>
-					<th>13</th>
-				</tr>
-				<tr>
-					<th>Magnesium</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Potassium</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Sodium</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Zinc</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
-				<tr>
-					<th>Copper</th>
-					<th>0</th>
-					<th>11</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>g</th>
+						<th>DRV</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Calcium</th>
+						<th>14</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Iron</th>
+						<th>15</th>
+						<th>13</th>
+					</tr>
+					<tr>
+						<th>Magnesium</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Potassium</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Sodium</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Zinc</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+					<tr>
+						<th>Copper</th>
+						<th>0</th>
+						<th>11</th>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 		
+		<div class="ingredients">
+			<h1>Ingredients</h1>
+			<hr/>
+			<table style="width:100%" id="ingredients">			
+				<thead>
+					<th>Name</th>
+					<th>g</th>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<th>g</th>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
 	</div>
 	<div id="copyright" class="container">
 		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>

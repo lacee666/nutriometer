@@ -577,8 +577,24 @@
 		font-size: 3em;
 	}
 
-	#page .tables{
-		width: 800px;
+	#page .details{
+		width: 40%;
+		display: inline-block;
+		text-align:center;
+		border-width:5px;
+		border-style:groove;
+		float: left;
+	}
+	#page .ingredients{
+		width: 40%;
+		display: inline-block;
+		text-align:center;
+		border-width:5px;
+		border-style:groove;	
+		float: left;
+	}
+	#page{
+		width: 100%;
 		display: inline-block;
 		text-align:center;
 		border-width:5px;
