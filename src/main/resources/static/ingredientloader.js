@@ -1,4 +1,4 @@
-function addElement() {
+$('input').on('click', function addElement() {
 	var table = document.getElementById("ingredients");
 	var row = table.insertRow(table.rows.length);
 
@@ -7,4 +7,4 @@ function addElement() {
 
 	cell1.innerHTML = "NEW CELL1";
 	cell2.innerHTML = "NEW CELL2";
-}
+});

@@ -58,15 +58,19 @@ Released   : 20140309
 			<div class="title">
 				<h2>Search your food here</h2>
 				<br/>
-				<form>
-				  <input type="text" name="search" placeholder="Search.."></input>
-				  <input type="text" name="search" placeholder="Value(g).."></input>
+				<form action="#" th:action="@{/foodsearch}" th:object="${food}" method="post">				
+				  <input type="text" name="foodname" th:field="*{name}" placeholder= "Search" />
+				  <input type="text" name="g" placeholder="Value(g).." value = "g"/>
+				  <input type="submit" value="Submit"  name = "submit" onClick="addElement();return false" />
+				  <!--
+				  <ul class="actions">
+					<li><a href="" class="button" onClick="addElement();return false">Submit</a></li>
+					</ul>
+					-->
 				</form>
 			</div>
 		</div>
-		<ul class="actions">
-			<li><a href="" class="button" onClick="addElement();return false">Submit</a></li>
-		</ul>
+		
 	</div>
 
 	<div id="page" class="container">
@@ -251,23 +255,23 @@ Released   : 20140309
 			</table>
 		</div>
 		
-		<div class="ingredients">
-			<h1>Ingredients</h1>
-			<hr/>
-			<table style="width:100%" id="ingredients">			
-				<thead>
-					<th>Name</th>
-					<th>g</th>
-				</thead>
-				<tbody>
-					<tr>
+			<div class="ingredients">
+				<h1>Ingredients</h1>
+				<hr/>
+				<table style="width:100%" id="ingredients">
+					<thead>
 						<th>Name</th>
 						<th>g</th>
-					</tr>
-				</tbody>
-			</table>
-			
-		</div>
+					</thead>
+					<tbody>
+						<tr th:each="food : ${foodNameList}">
+							<td th:text="${food}"></td>
+							<td th:text="${food}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		
 	</div>
 	<div id="copyright" class="container">
 		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>

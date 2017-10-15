@@ -21,7 +21,7 @@ public class Food extends BaseEntity {
 
     //name
     @Column(nullable = false, unique = true)
-    private String foodName;
+    private String name;
 
     //basic stuff
     @Column

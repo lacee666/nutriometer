@@ -17,14 +17,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @GetMapping("/index")
     public String index() {
         return "index";
     }
-    @GetMapping("/foodsearch")
-    public String foodSearch() {
-        return "foodsearch";
-    }
+
     @GetMapping("/recipesearch")
     public String recipeSearch() {
         return "recipesearch";
