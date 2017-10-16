@@ -1,6 +1,5 @@
 package com.nutriometer.controller;
 
-
 import com.nutriometer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,6 @@ public class UserController {
     public String index() {
         return "index";
     }
-
     @GetMapping("/recipesearch")
     public String recipeSearch() {
         return "recipesearch";
@@ -37,10 +35,15 @@ public class UserController {
         model.addAttribute("user", new User());
         return "contact";
     }
-    @GetMapping("/greeting")
+    @GetMapping("/greeting/{name}")
     public String greeting(){
         return "greeting";
     }
+    @GetMapping("/login/{name}")
+    public String login(){
+        return "greeting";
+    }
+
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, Model model) {
