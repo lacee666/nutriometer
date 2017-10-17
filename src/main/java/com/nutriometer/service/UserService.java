@@ -1,5 +1,6 @@
 package com.nutriometer.service;
 
+
 import com.nutriometer.repository.UserRepository;
 import com.nutriometer.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
