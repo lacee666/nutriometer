@@ -4,14 +4,15 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ContentComponent } from './content/content.component';
 
-import { GreetingComponent } from './greeting/greeting.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    GreetingComponent
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
