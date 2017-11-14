@@ -1,7 +1,8 @@
 <div class="headerComponent">
   <ul>
     <li *ngFor="let item of menuItems">
-      <a href={{item.link}}> {{item.name}}</a>
+      <a routerLink="/{{item.link}}"> {{item.name}}</a>
+      
     </li>
   </ul>
 </div>
