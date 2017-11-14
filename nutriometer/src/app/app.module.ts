@@ -8,6 +8,9 @@ import { ContentComponent } from './content/content.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { IndexComponent } from './index/index.component';
 import { ContactComponent } from './contact/contact.component';
+import { SignComponent } from './sign/sign.component';
+import { RegisterformComponent } from './registerform/registerform.component';
+import { LoginformComponent } from './loginform/loginform.component';
 
 
 
@@ -18,6 +21,9 @@ import { ContactComponent } from './contact/contact.component';
     ContentComponent,
     IndexComponent,
     ContactComponent,
+    SignComponent,
+    RegisterformComponent,
+    LoginformComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
   menuItems: Array<menuItem> = [
-    {name: "HomePage", link: "index"},
-    {name: "Food Search", link: "#"},
-    {name: "Recipe Search", link: "https://youtube.com"},
-    {name: "Sign in/up", link: "#"},
+    {name: "HomePage", link: ""},
+    {name: "Food Search", link: "foodsearch"},
+    {name: "Recipe Search", link: "recipesearch"},
+    {name: "Sign in/up", link: "sign"},
     {name: "Contact", link: "contact"},
+    
   ];
   menu: menuItem = this.menuItems[0];
   navigate(name : string){
