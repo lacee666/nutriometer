@@ -7,24 +7,30 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './pages/index/index.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { SignComponent } from './components/sign/sign.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { RegisterformComponent } from './components/registerform/registerform.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
+import { FoodsearchComponent } from './pages/foodsearch/foodsearch.component';
+import { RecipesearchComponent } from './pages/recipesearch/recipesearch.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ContactformComponent } from './components/contactform/contactform.component';
 
 
 
 
 @NgModule({
   declarations: [
+    ContactComponent,
     AppComponent,
     HeaderComponent,
     ContentComponent,
     IndexComponent,
-    ContactComponent,
-    SignComponent,
+    LoginComponent,
+    ContactformComponent,
     RegisterformComponent,
     LoginformComponent,
+    FoodsearchComponent,
+    RecipesearchComponent,
   ],
   imports: [
     BrowserModule,

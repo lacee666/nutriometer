@@ -1,0 +1,208 @@
+<div class="foodsearch">
+<app-header></app-header>
+<div id="page" class="container">
+    
+    <div class="details">
+        <h1>Details</h1>
+        <hr/>
+        <h2>Basics</h2>
+        <hr/>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>g</th>
+              <th>DRV</th>
+            </tr>
+            <tr>
+              <th>Water</th>
+              <th>14</th>
+              <th>11</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th>Carbohydrates</th>
+            <th>15</th>
+            <th>13</th>
+          </tr>
+          <tr>
+            <th>Energy</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          <tr>
+            <th>Calories</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          <tr>
+            <th>Fiber</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          <tr>
+            <th>Protein</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          </tbody>
+        </table>
+        <hr/>
+        <h2>Fats</h2>
+        <hr/>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>g</th>
+              <th>DRV</th>
+            </tr>
+            <tr>
+              <th>Fat</th>
+              <th>11</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Saturated fat</th>
+              <th>14</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Monounsaturated fat</th>
+              <th>15</th>
+              <th>13</th>
+            </tr>
+            <tr>
+              <th>Polyunsaturated fat</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+          </tbody>
+        </table>
+        <hr/>
+        <h2>Vitamins</h2>
+        <hr/>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>g</th>
+              <th>DRV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Vitamin A</th>
+              <th>14</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Vitamin B6</th>
+              <th>15</th>
+              <th>13</th>
+            </tr>
+            <tr>
+              <th>Vitamin B12</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Vitamin C</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Vitamin D</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Vitamin E</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Vitamin K</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+          </tbody>
+        </table>
+        <hr/>
+        <h2>Minerals</h2>
+        <hr/>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>g</th>
+              <th>DRV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Calcium</th>
+              <th>14</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Iron</th>
+              <th>15</th>
+              <th>13</th>
+            </tr>
+            <tr>
+              <th>Magnesium</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Potassium</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Sodium</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Zinc</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>Copper</th>
+              <th>0</th>
+              <th>11</th>
+            </tr>
+          </tbody>
+        </table>
+   
+    
+    <div class="ingredients">
+        <h1>Ingredients</h1>
+        <hr/>
+        <table style="width:100%" id="ingredients">
+          <thead>
+            <th>Name</th>
+            <th>g</th>
+          </thead>
+          <tbody>
+            <tr th:each="food : ${foodNameList}">
+              <td th:text="${food}"></td>
+              <td th:text="${food}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+  </div>
+  <div id="copyright" class="container">
+    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+  </div>
+  </div>
+  </div>
+  

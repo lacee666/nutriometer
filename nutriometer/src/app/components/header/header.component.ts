@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     {name: "HomePage", link: ""},
     {name: "Food Search", link: "foodsearch"},
     {name: "Recipe Search", link: "recipesearch"},
-    {name: "Sign in/up", link: "sign"},
+    {name: "Sign in/up", link: "login"},
     {name: "Contact", link: "contact"},
     
   ];
