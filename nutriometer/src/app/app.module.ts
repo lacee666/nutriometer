@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { IndexComponent } from './index/index.component';
-import { ContactComponent } from './contact/contact.component';
-import { SignComponent } from './sign/sign.component';
-import { RegisterformComponent } from './registerform/registerform.component';
-import { LoginformComponent } from './loginform/loginform.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ContentComponent } from './components/content/content.component';
+import { AppRoutingModule } from './app-routing.module';
+import { IndexComponent } from './pages/index/index.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { SignComponent } from './components/sign/sign.component';
+import { RegisterformComponent } from './components/registerform/registerform.component';
+import { LoginformComponent } from './components/loginform/loginform.component';
+
 
 
 

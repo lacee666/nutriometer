@@ -1,10 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {IndexComponent} from './index/index.component';
-import {HeaderComponent} from './header/header.component';
-import {ContactComponent} from './contact/contact.component';
-import {SignComponent} from './sign/sign.component';
+import {IndexComponent} from './pages/index/index.component';
+import {HeaderComponent} from './components/header/header.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {SignComponent} from './components/sign/sign.component';
 
 
 
