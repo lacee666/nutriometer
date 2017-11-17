@@ -6,9 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USERS")
@@ -27,8 +26,18 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
+    @JoinColumn
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Diary.class)
+    public List<Diary> diary;
 
-    @Column(nullable = false, unique = false)
+    @JoinColumn
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Recipe.class)
+    public List<Recipe> recipes;
+
+
+
+    @Column(nullable = false, unique = true)
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public enum Role {
