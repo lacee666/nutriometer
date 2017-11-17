@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Diary")
@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class Diary extends BaseEntity{
     @Column
     public String name;
-    /*
+
     @JoinColumn
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Food.class)
-    public ArrayList<Food> foods;*/
+    public List<Food> foods;
 }
