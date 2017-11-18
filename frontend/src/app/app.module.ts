@@ -14,6 +14,9 @@ import { FoodsearchComponent } from './pages/foodsearch/foodsearch.component';
 import { RecipesearchComponent } from './pages/recipesearch/recipesearch.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactformComponent } from './components/contactform/contactform.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { FoodcontentComponent } from './components/foodcontent/foodcontent.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -31,6 +34,9 @@ import { ContactformComponent } from './components/contactform/contactform.compo
     LoginformComponent,
     FoodsearchComponent,
     RecipesearchComponent,
+    ProfileComponent,
+    FoodcontentComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

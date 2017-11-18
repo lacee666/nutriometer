@@ -1,0 +1,64 @@
+<div class="searchfood">
+<input type="text" name="search" placeholder="Search..">
+</div>
+<div class="page">
+<div class="nutritiondata">
+    <div class="details">
+        <h1>Nutrition Details</h1>
+        <hr/>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>TYPE</th>
+              <th>Amount(kcal, g)</th>
+              <th>DRV</th>
+            </tr>
+
+          </thead>
+          <tbody>
+          <tr>
+            <th>Calories</th>
+            <th>15</th>
+            <th>11</th>
+          </tr>
+          <tr>
+            <th>Carbohydrates</th>
+            <th>15</th>
+            <th>13</th>
+          </tr>
+          <tr>
+            <th>Fat</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          <tr>
+            <th>Protein</th>
+            <th>0</th>
+            <th>11</th>
+          </tr>
+          </tbody>
+        </table>
+    
+    <div class="ingredients">
+        <h1>Ingredients</h1>
+        <hr/>
+        <table style="width:100%" id="ingredients">
+          <thead>
+            <th>Name</th>
+            <th>g</th>
+          </thead>
+          <tbody>
+            <tr th:each="food : ${foodNameList}">
+              <td th:text="${food}"></td>
+              <td th:text="${food}"></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>   
+<app-footer></app-footer>
+
+
+</div>
+
+ 

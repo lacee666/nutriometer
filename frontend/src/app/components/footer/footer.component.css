@@ -1,0 +1,43 @@
+
+p
+{
+    line-height: 180%;
+}
+
+
+a
+{
+    color: #0000FF;
+}
+
+.container
+{
+    overflow: hidden;
+    margin: 0em auto;
+    width: 1000px;
+}
+
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+#copyright
+{
+    overflow: hidden;
+    padding: 5em 0em;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+#copyright p
+{
+    text-align: center;
+    font-size: 1em;
+    color: rgba(255,255,255,0.5);
+}
+
+#copyright a
+{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
