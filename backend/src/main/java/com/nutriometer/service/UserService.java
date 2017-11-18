@@ -24,12 +24,13 @@ public class UserService {
         throw new UserNotValidException();
     }
 
-    public void register(User user){
+    public User register(User user){
         user.setRole(USER);
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepository.save(user);
+        return user;
     }
 
     public boolean isValid(User user) {
@@ -44,6 +45,9 @@ public class UserService {
 
     public User getUser(){
         return user;
+    }
+    public UserRepository getUserRepository(){
+        return userRepository;
     }
 }
 
