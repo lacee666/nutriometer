@@ -5,6 +5,7 @@ package com.nutriometer.config;
  */
 import com.nutriometer.model.User;
 import com.nutriometer.service.UserService;
+import com.nutriometer.service.annotations.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;

@@ -9,6 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import static com.nutriometer.model.User.Role.USER;
+
 
 @Service
 public class UserService {
@@ -17,28 +19,31 @@ public class UserService {
     private User user;
     public User login(User user) throws UserNotValidException {
         if (isValid(user)) {
-            return this.user = userRepository.findByUsername(user.getUsername()) /*.get()*/;
+            return this.user = userRepository.findByUsername(user.getUsername());
         }
         throw new UserNotValidException();
     }
 
-    public User register(User user){
+    public void register(User user){
+        user.setRole(USER);
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepository.save(user);
-        return user;
     }
 
     public boolean isValid(User user) {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String pwd = userRepository.findByUsername(user.getUsername()).getPassword();
-
         return userRepository.findByUsername(user.getUsername()) != null && encoder.matches(user.getPassword(), pwd);
     }
 
     public boolean isLoggedIn() {
         return user != null;
+    }
+
+    public User getUser(){
+        return user;
     }
 }
 
