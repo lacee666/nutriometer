@@ -18,6 +18,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodcontentComponent } from './components/foodcontent/foodcontent.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { RegistrationService } from './services/registration.service';
 
 
 
@@ -45,7 +46,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [RegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -21,13 +21,13 @@ public class RecipeService {
         recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         return recipeRepository.save(recipe);
     }
-    public Recipe update(int id, Recipe issue) {
+    public Recipe update(long id, Recipe issue) {
         Recipe recipe = recipeRepository.findOne(id);
         recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         return recipeRepository.save(recipe);
     }
 
-    public Recipe read(int id) {
+    public Recipe read(long id) {
         return recipeRepository.findOne(id);
     }
 }

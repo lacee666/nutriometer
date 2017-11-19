@@ -1,6 +1,8 @@
 package com.nutriometer.service;
 
 
+import com.nutriometer.model.Diary;
+import com.nutriometer.model.Recipe;
 import com.nutriometer.repository.UserRepository;
 import com.nutriometer.model.User;
 import com.nutriometer.service.exceptions.UserNotValidException;
@@ -39,6 +41,16 @@ public class UserService {
         return userRepository.findByUsername(user.getUsername()) != null && encoder.matches(user.getPassword(), pwd);
     }
 
+    // adding a new daily intake(diary)
+    public void addToDiary(Diary newDiary){
+        user.diary.add(newDiary);
+        userRepository.save(user);
+    }
+
+    public void addToRecipes(Recipe newRecipe){
+        user.recipes.add(newRecipe);
+        userRepository.save(user);
+    }
     public boolean isLoggedIn() {
         return user != null;
     }

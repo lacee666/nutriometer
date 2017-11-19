@@ -17,11 +17,11 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Recipe extends BaseEntity{
-
+    /*
     @JoinColumn
     @ManyToOne(targetEntity = User.class)
     private User user;
-
+    */
     @Column(nullable = false, unique = false)
     public String name;
 

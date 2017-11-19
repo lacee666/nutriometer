@@ -29,15 +29,14 @@ public class RecipeApiController {
     @Role({ADMIN, USER})
     @PostMapping
     private ResponseEntity<Recipe> create(@RequestBody Recipe recipe) {
-        recipe.setUser(userService.getUserRepository().findByUsername(userService.getUser().getUsername()));
+        //recipe.setUser(userService.getUserRepository().findByUsername(userService.getUser().getUsername()));
         Recipe saved = recipeService.create(recipe);
         return ResponseEntity.ok(saved);
     }
 
     @Role({ADMIN, USER})
     @GetMapping("/{id}")
-    private ResponseEntity<Recipe> read(@PathVariable String id) {
-        Recipe read = recipeService.read(Integer.parseInt(id));
-        return ResponseEntity.ok(read);
+    private String read(@PathVariable String id) {
+        return id;
     }
 }
