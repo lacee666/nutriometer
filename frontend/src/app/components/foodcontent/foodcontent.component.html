@@ -9,54 +9,60 @@
         <table style="width:100%">
           <thead>
             <tr>
-              <th>TYPE</th>
-              <th>Amount(kcal, g)</th>
+              <th>Name</th>
+              <th>Value</th>
+              <th>Unit</th>
               <th>DRV</th>
             </tr>
-
           </thead>
           <tbody>
           <tr>
             <th>Calories</th>
-            <th>15</th>
-            <th>11</th>
+            <th>0</th>
+            <th>kcal</th>
+            <th>0</th>
           </tr>
           <tr>
-            <th>Carbohydrates</th>
-            <th>15</th>
-            <th>13</th>
+            <th>Carbs</th>
+            <th>0</th>
+            <th>g</th>
+            <th>0</th>
           </tr>
           <tr>
             <th>Fat</th>
             <th>0</th>
-            <th>11</th>
+            <th>g</th>
+            <th>0</th>
           </tr>
           <tr>
             <th>Protein</th>
             <th>0</th>
-            <th>11</th>
+            <th>g</th>
+            <th>0</th>
           </tr>
           </tbody>
         </table>
-    
+    </div>
     <div class="ingredients">
         <h1>Ingredients</h1>
         <hr/>
         <table style="width:100%" id="ingredients">
           <thead>
-            <th>Name</th>
+            <th>Food name</th>
             <th>g</th>
           </thead>
           <tbody>
-            <tr th:each="food : ${foodNameList}">
-              <td th:text="${food}"></td>
-              <td th:text="${food}"></td>
+            <tr>
+
             </tr>
           </tbody>
         </table>
     </div>
+    <div class="clearfix"></div>
+    <div class= "save">
+      <button>Save</button>
+    </div>
 </div>   
-<app-footer></app-footer>
 
 
 </div>

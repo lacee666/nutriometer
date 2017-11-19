@@ -1,6 +1,12 @@
 .login{
-    width: 100%;
-    border: 3px solid #73AD21;    
-    position: absolute;   
-    left: 0px;
+    float: left;
+    width:50%;
+}
+
+.register{
+    width:50%;
+    float:right;
+}
+.clearfix{
+    clear:both
 }

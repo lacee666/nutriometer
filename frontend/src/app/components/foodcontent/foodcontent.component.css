@@ -18,3 +18,24 @@ input[type=text] {
 input[type=text]:focus {
     width: 20%;
 }
+
+.details{
+    border: 2px solid rgb(57, 236, 117);
+    float: left;
+    width:50%;
+    background-color: rgb(82, 197, 149);
+    
+}
+
+.ingredients{
+    border: 2px solid rgb(57, 236, 117);
+    width:49%;
+    float:right;
+    
+}
+.clearfix{
+    clear:both
+}
+#h1{
+    text-align:center;
+}

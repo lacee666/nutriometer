@@ -17,6 +17,7 @@ import { ContactformComponent } from './components/contactform/contactform.compo
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodcontentComponent } from './components/foodcontent/foodcontent.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
@@ -37,6 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProfileComponent,
     FoodcontentComponent,
     FooterComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
