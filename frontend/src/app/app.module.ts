@@ -19,7 +19,7 @@ import { FoodcontentComponent } from './components/foodcontent/foodcontent.compo
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegistrationService } from './services/registration.service';
-
+import { HttpModule, JsonpModule } from '@angular/http';
 
 
 
@@ -45,6 +45,8 @@ import { RegistrationService } from './services/registration.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
+    JsonpModule,
   ],
   providers: [RegistrationService],
   bootstrap: [AppComponent]
