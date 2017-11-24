@@ -16,7 +16,7 @@ import static com.nutriometer.model.User.Role.USER;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/food")
+@RequestMapping("/api/recipe")
 public class RecipeApiController {
 
     @Autowired
@@ -28,8 +28,7 @@ public class RecipeApiController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    UserRepository userRepository;
+
     @Role({ADMIN, USER})
     @PostMapping
     private ResponseEntity<Recipe> create(@RequestBody Recipe recipe) {
@@ -38,9 +37,5 @@ public class RecipeApiController {
         return ResponseEntity.ok(saved);
     }
 
-    @Role({ADMIN, USER})
-    @GetMapping("/{id}")
-    private User read(@PathVariable String id){
-        return userRepository.findByUsername(id);
-    }
+
 }

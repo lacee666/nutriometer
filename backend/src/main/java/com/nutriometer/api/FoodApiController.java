@@ -1,6 +1,9 @@
 package com.nutriometer.api;
 
+import com.nutriometer.model.Food;
 import com.nutriometer.model.User;
+import com.nutriometer.repository.FoodRepository;
+import com.nutriometer.repository.UserRepository;
 import com.nutriometer.service.FoodService;
 import com.nutriometer.service.UserService;
 import com.nutriometer.service.annotations.Role;
@@ -12,14 +15,18 @@ import static com.nutriometer.model.User.Role.ADMIN;
 import static com.nutriometer.model.User.Role.USER;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/food")
 public class FoodApiController {
 
     @Autowired
     private FoodService foodService;
-
     @Autowired
-    private UserService userService;
+    private FoodRepository foodRepository;
 
-
+    @Role({ADMIN, USER})
+    @GetMapping("/{foodname}")
+    private Food getFood(@PathVariable String foodname){
+        return foodService.findbyfoodName(foodname);
+    }
 }

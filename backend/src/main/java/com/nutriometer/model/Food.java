@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "FOOD")
+@Table(name = "FOODS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,7 +21,8 @@ public class Food extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;
-
+    @Column
+    private float amount;
     @Column
     private float calorie;
     @Column

@@ -1,11 +1,16 @@
 <div class="searchfood">
-<input type="text" name="search" placeholder="Search..">
+<input type="text" name="search" placeholder="Search.." #foodName>
+<button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="addFood(foodName.value)">Add food</button>
 </div>
 <div class="page">
 <div class="nutritiondata">
     <div class="details">
         <h1>Nutrition Details</h1>
         <hr/>
+        <div *ngFor="let food of foodList">
+          {{food | json}}
+        </div>
+        
         <table style="width:100%">
           <thead>
             <tr>
@@ -18,26 +23,26 @@
           <tbody>
           <tr>
             <th>Calories</th>
-            <th>0</th>
+            <th>{{currentCalorie}}</th>
             <th>kcal</th>
             <th>0</th>
           </tr>
           <tr>
             <th>Carbs</th>
-            <th>0</th>
-            <th>g</th>
+            <th>{{currentCarb / max}}</th>
+            <th>%</th>
             <th>0</th>
           </tr>
           <tr>
             <th>Fat</th>
-            <th>0</th>
-            <th>g</th>
+            <th>{{currentFat / max}}</th>
+            <th>%</th>
             <th>0</th>
           </tr>
           <tr>
             <th>Protein</th>
-            <th>0</th>
-            <th>g</th>
+            <th>{{currentProtein / max}}</th>
+            <th>%</th>
             <th>0</th>
           </tr>
           </tbody>
@@ -51,9 +56,10 @@
             <th>Food name</th>
             <th>g</th>
           </thead>
-          <tbody>
-            <tr>
-
+          <tbody *ngFor="let food of foodList">
+            <tr >
+              {{food.name}}
+              {{food.amount}}
             </tr>
           </tbody>
         </table>

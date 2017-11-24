@@ -1,6 +1,7 @@
 package com.nutriometer.api;
 
 import com.nutriometer.model.User;
+import com.nutriometer.repository.UserRepository;
 import com.nutriometer.service.UserService;
 import com.nutriometer.service.annotations.Role;
 import com.nutriometer.service.exceptions.UserNotValidException;
@@ -11,15 +12,18 @@ import static com.nutriometer.model.User.Role.ADMIN;
 import static com.nutriometer.model.User.Role.USER;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/user")
 public class UserApiController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
-    public UserApiController(UserService userService) {
-        this.userService = userService;
-    }
+    UserRepository userRepository;
+
+
+
 
     @Role({USER,ADMIN})
     @GetMapping
@@ -42,5 +46,11 @@ public class UserApiController {
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         return ResponseEntity.ok(userService.register(user));
+    }
+
+    @Role({ADMIN, USER})
+    @GetMapping("/{username}")
+    private User getUser(@PathVariable String username){
+        return userRepository.findByUsername(username);
     }
 }
