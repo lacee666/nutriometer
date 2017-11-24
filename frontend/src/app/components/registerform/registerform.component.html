@@ -1,19 +1,20 @@
 <div class="container">  
   <form id="contact" action="" method="post">
-    <fieldset>
+
       <input placeholder="Email" type="email" tabindex="1" required autofocus>
-    </fieldset>
-    <fieldset>
-      <input placeholder="UserName" type="text" tabindex="2" required>
-    </fieldset>
-    <fieldset>
+
+      <input placeholder="UserName" type="text" tabindex="2" #username>
+
       <input placeholder="Password" type="password" tabindex="3" required>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Register</button>
-    </fieldset>
+
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="getUser(username.value)">Register</button>
+
   </form>
 </div>
 <p>AHAHA</p>
-<h1>{{user.username}}</h1>
-
+<h2>1 {{user.username}}</h2>
+<h2>2 {{user.email}}</h2>
+<h2>3 {{user.password}}</h2>
+<h2>4 {{user.diary}}</h2>
+<h2>5 {{user.recipes}}</h2>
+<h2>6 {{user.role}}</h2>

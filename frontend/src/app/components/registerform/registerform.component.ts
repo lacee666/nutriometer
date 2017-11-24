@@ -10,12 +10,14 @@ import {User} from '../../models/User';
 
 export class RegisterformComponent implements OnInit {
   user: User;
-
+  userName: string;
   constructor(private _regservice : RegistrationService) { }
 
   ngOnInit() {
-    this._regservice.getUser(this.user).subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
+    this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
     console.log(this.user.username);
   }
-
+  getUser(userName: string): void{
+    this._regservice.getUser(this.user, userName).subscribe(user => this.user = user);
+  }
 }

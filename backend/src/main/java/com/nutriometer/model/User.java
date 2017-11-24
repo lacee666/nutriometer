@@ -36,7 +36,7 @@ public class User extends BaseEntity {
 
 
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
 
