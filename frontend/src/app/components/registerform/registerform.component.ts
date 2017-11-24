@@ -1,5 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { RegistrationService } from '../../services/registration.service';
+import {User} from '../../models/User';
 @Component({
   selector: 'app-registerform',
   templateUrl: './registerform.component.html',
@@ -8,13 +9,13 @@ import { RegistrationService } from '../../services/registration.service';
 })
 
 export class RegisterformComponent implements OnInit {
-  data = "123";
+  user: User;
 
   constructor(private _regservice : RegistrationService) { }
 
   ngOnInit() {
-    this._regservice.fetchData().subscribe((res => this.data = res.text()));
-    console.log(this.data);
+    this._regservice.getUser(this.user).subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
+    console.log(this.user.username);
   }
 
 }
