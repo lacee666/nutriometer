@@ -42,5 +42,5 @@ export class FoodcontentComponent implements OnInit {
       this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100;
   }
 
-  }
+  
 }
