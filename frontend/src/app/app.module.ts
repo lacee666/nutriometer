@@ -21,8 +21,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegistrationService } from './services/registration.service';
 import { FoodsearchService } from './services/foodsearch.service';
 import { RecipeService } from './services/recipe.service';
+import { UserService } from './services/user.service';
 import { HttpModule, JsonpModule } from '@angular/http';
-
+import {AuthguardGuard} from './authguard.guard';
 
 
 @NgModule({
@@ -50,7 +51,13 @@ import { HttpModule, JsonpModule } from '@angular/http';
     HttpModule,
     JsonpModule,
   ],
-  providers: [RegistrationService, FoodsearchService, RecipeService],
+  providers: [
+    RegistrationService, 
+    FoodsearchService, 
+    RecipeService,
+    UserService,
+    AuthguardGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

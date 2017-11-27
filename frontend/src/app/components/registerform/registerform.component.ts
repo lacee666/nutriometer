@@ -15,7 +15,7 @@ export class RegisterformComponent implements OnInit {
 
   ngOnInit() {
     this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
-    console.log(this.user.username);
+    //console.log(this.user.username);
   }
   getUser(userName: string): void{
     this._regservice.getUser(this.user, userName).subscribe(user => this.user = user);

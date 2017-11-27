@@ -1,13 +1,11 @@
 <div class="container">  
-  <form id="contact" action="" method="post">
-    <fieldset>
+  <form id="contact" (submit)="loginUser($event)" method="post">
+
       <input placeholder="Username" type="text" tabindex="1" required autofocus>
-    </fieldset>
-    <fieldset>
+
       <input placeholder="Password" type="password" tabindex="2" required>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Login</button>
-    </fieldset>
+
+      <input value="Login" type="submit">
+
   </form>
 </div>

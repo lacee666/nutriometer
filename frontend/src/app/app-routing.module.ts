@@ -6,7 +6,7 @@ import {FoodsearchComponent} from './pages/foodsearch/foodsearch.component';
 import {RecipesearchComponent} from './pages/recipesearch/recipesearch.component';
 import {LoginComponent} from './pages/login/login.component';
 import {ContactComponent} from './pages/contact/contact.component';
-
+import {AuthguardGuard} from './authguard.guard';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   {   path: 'foodsearch', component: FoodsearchComponent},
   {   path: 'recipesearch', component: RecipesearchComponent},
   {   path: 'login', component: LoginComponent},
-  {   path: 'contact', component: ContactComponent},
+  {   path: 'contact', canActivate: [AuthguardGuard], component: ContactComponent},
   {   path: '**', component: IndexComponent },
 ];
 
@@ -22,6 +22,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
   ],
+  providers: [AuthguardGuard],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
