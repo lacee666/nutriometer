@@ -14,10 +14,22 @@ export class RegisterformComponent implements OnInit {
   constructor(private _regservice : RegistrationService) { }
 
   ngOnInit() {
-    this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
+    //this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
     //console.log(this.user.username);
   }
   getUser(userName: string): void{
-    this._regservice.getUser(this.user, userName).subscribe(user => this.user = user);
+    //this._regservice.getUser(this.user, userName).subscribe(user => this.user = user);
+  }
+  registerUser(e): void{
+    e.preventDefault();
+    let user: User = new User();
+    user.email = e.target.elements[0].value;
+    user.username = e.target.elements[1].value;
+    user.password = e.target.elements[2].value;
+    console.log(JSON.stringify(user));
+    let a = this._regservice.registerUser(user);
+    console.log("HE HE");
+    console.log(a);
+    console.log("HE HE XD");
   }
 }

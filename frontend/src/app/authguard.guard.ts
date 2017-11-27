@@ -9,8 +9,7 @@ export class AuthguardGuard implements CanActivate {
   }
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
-    
+    state: RouterStateSnapshot,  
   ): Observable<boolean> | Promise<boolean> | boolean {
     return this.userService.getUserLoggedIn();
   }

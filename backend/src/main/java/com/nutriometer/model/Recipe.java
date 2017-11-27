@@ -25,6 +25,7 @@ public class Recipe extends BaseEntity{
     @Column(nullable = false)
     public String name;
 
+    // comment length is 2048
     @Column(nullable = false, length = 2048)
     public String details;
     /*

@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 
+// this class represents a food/ingredient
 public class Food extends BaseEntity {
 
     @Column(nullable = false, unique = true)

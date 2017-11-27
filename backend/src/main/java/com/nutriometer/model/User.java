@@ -26,10 +26,12 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
+    // this list represents daily diaries where the users can track their macros
     @JoinColumn
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Diary.class)
     public List<Diary> diary;
 
+    // this list represents the recipes one user has
     @JoinColumn
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Recipe.class)
     public List<Recipe> recipes;

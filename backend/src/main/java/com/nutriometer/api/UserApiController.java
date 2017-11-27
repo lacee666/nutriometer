@@ -45,10 +45,11 @@ public class UserApiController {
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
+        System.out.println("POST OKKKK");
         return ResponseEntity.ok(userService.register(user));
     }
 
-    @Role({ADMIN, USER})
+    //@Role({ADMIN, USER})
     @GetMapping("/{username}")
     private User getUser(@PathVariable String username){
         return userRepository.findByUsername(username);

@@ -1,20 +1,9 @@
 <div class="container">  
-  <form id="contact" action="" method="post">
-
-      <input placeholder="Email" type="email" tabindex="1" required autofocus>
-
-      <input placeholder="UserName" type="text" tabindex="2" #username>
-
+  <form id="contact" method="post" (submit)="registerUser($event)">
+      <input placeholder="Email" type="text" tabindex="1" required autofocus>
+      <input placeholder="UserName" type="text" tabindex="2" required>
       <input placeholder="Password" type="password" tabindex="3" required>
-
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="getUser(username.value)">Register</button>
-
+      <input value="submit" type="submit">
   </form>
 </div>
 <p>AHAHA</p>
-<h2>1 {{user.username}}</h2>
-<h2>2 {{user.email}}</h2>
-<h2>3 {{user.password}}</h2>
-<h2>4 {{user.diary}}</h2>
-<h2>5 {{user.recipes}}</h2>
-<h2>6 {{user.role}}</h2>
