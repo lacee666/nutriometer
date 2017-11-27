@@ -2,6 +2,8 @@ import {Food} from './Food';
 export class Recipe{
     name: String;
     details: String;
-    timestamp: String;
-    foods: Array<Food>;
+    id: number;
+    version: number; 
+    //timestamp: String;
+    //foods: Array<Food>;
 }

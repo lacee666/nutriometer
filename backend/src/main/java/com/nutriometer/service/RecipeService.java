@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class RecipeService {
@@ -18,15 +19,17 @@ public class RecipeService {
     }
 
     public Recipe create(Recipe recipe){
-        recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+        //recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         return recipeRepository.save(recipe);
     }
     public Recipe update(long id, Recipe issue) {
         Recipe recipe = recipeRepository.findOne(id);
-        recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+        //recipe.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         return recipeRepository.save(recipe);
     }
-
+    public List<Recipe> findAllRecipes(){
+        return (List<Recipe>) recipeRepository.findAll();
+    }
     public Recipe read(long id) {
         return recipeRepository.findOne(id);
     }

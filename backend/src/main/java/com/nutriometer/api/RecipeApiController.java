@@ -1,16 +1,16 @@
 package com.nutriometer.api;
 
 import com.nutriometer.model.Recipe;
-import com.nutriometer.model.User;
-import com.nutriometer.repository.UserRepository;
 import com.nutriometer.service.FoodService;
 import com.nutriometer.service.RecipeService;
 import com.nutriometer.service.UserService;
 import com.nutriometer.service.annotations.Role;
-import com.nutriometer.service.exceptions.UserNotValidException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 import static com.nutriometer.model.User.Role.ADMIN;
 import static com.nutriometer.model.User.Role.USER;
 
@@ -37,5 +37,9 @@ public class RecipeApiController {
         return ResponseEntity.ok(saved);
     }
 
-
+    @Role({ADMIN, USER})
+    @GetMapping("/all")
+    private List<Recipe> getAllRecipes(){
+        return recipeService.findAllRecipes();
+    }
 }

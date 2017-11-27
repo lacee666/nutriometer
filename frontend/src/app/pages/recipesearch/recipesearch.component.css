@@ -4,3 +4,7 @@
     position: absolute;   
     left: 0px;
 }
+
+.wrapper{
+    position: right;
+}

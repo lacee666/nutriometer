@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegistrationService } from './services/registration.service';
 import { FoodsearchService } from './services/foodsearch.service';
+import { RecipeService } from './services/recipe.service';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 
@@ -49,7 +50,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     HttpModule,
     JsonpModule,
   ],
-  providers: [RegistrationService, FoodsearchService],
+  providers: [RegistrationService, FoodsearchService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

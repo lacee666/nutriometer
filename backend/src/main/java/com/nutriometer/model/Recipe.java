@@ -22,16 +22,17 @@ public class Recipe extends BaseEntity{
     @ManyToOne(targetEntity = User.class)
     private User user;
     */
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false)
     public String name;
 
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false, length = 2048)
     public String details;
-
+    /*
     @Column(nullable = false)
     private Timestamp timestamp;
 
     @JoinColumn
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Food.class)
     public List<Food> foods;
+    */
 }
