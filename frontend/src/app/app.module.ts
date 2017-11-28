@@ -24,6 +24,9 @@ import { RecipeService } from './services/recipe.service';
 import { UserService } from './services/user.service';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {AuthguardGuard} from './authguard.guard';
+import { DiaryComponent } from './pages/diary/diary.component';
+import { MyrecipesComponent } from './pages/myrecipes/myrecipes.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import {AuthguardGuard} from './authguard.guard';
     FoodcontentComponent,
     FooterComponent,
     SidebarComponent,
+    DiaryComponent,
+    MyrecipesComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

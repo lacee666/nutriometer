@@ -19,7 +19,7 @@ export class LoginformComponent implements OnInit {
 
     if(username == 'admin' && password == 'admin'){
       this.userService.setUserLoggedIn(true);
-      this.router.navigate(['contact']);
+      this.router.navigate(['profile']);
     }
     return false;
   }
