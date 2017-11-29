@@ -1,17 +1,17 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { RegistrationService } from '../../services/registration.service';
+import { UserService } from '../../services/user.service';
 import {User} from '../../models/User';
 @Component({
   selector: 'app-registerform',
   templateUrl: './registerform.component.html',
   styleUrls: ['./registerform.component.css'],
-  providers: [RegistrationService],
+  providers: [UserService],
 })
 
 export class RegisterformComponent implements OnInit {
   user: User;
   userName: string;
-  constructor(private _regservice : RegistrationService) { }
+  constructor(private userService : UserService) { }
 
   ngOnInit() {
     //this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
@@ -27,7 +27,7 @@ export class RegisterformComponent implements OnInit {
     user.username = e.target.elements[1].value;
     user.password = e.target.elements[2].value;
     console.log(JSON.stringify(user));
-    let a = this._regservice.registerUser(user);
+    let a = this.userService.registerUser(user);
     console.log("HE HE");
     console.log(a);
     console.log("HE HE XD");

@@ -52,6 +52,7 @@ public class UserApiController {
     //@Role({ADMIN, USER})
     @GetMapping("/{username}")
     private User getUser(@PathVariable String username){
+        System.out.println("/api/user -> GET: " + username);
         return userRepository.findByUsername(username);
     }
 }
