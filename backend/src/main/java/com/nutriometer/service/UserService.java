@@ -28,17 +28,23 @@ public class UserService {
 
     public User register(User user){
         user.setRole(USER);
+        /*
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+        */
+        
         userRepository.save(user);
         return user;
     }
 
     public boolean isValid(User user) {
+        /*
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String pwd = userRepository.findByUsername(user.getUsername()).getPassword();
         return userRepository.findByUsername(user.getUsername()) != null && encoder.matches(user.getPassword(), pwd);
+        */
+        return userRepository.findByUsername(user.getUsername()) != null && user.getPassword().equals(userRepository.findByUsername(user.getUsername()).getPassword());
     }
 
     // adding a new daily intake(diary)

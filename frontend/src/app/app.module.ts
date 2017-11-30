@@ -18,7 +18,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodcontentComponent } from './components/foodcontent/foodcontent.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { RegistrationService } from './services/registration.service';
 import { FoodsearchService } from './services/foodsearch.service';
 import { RecipeService } from './services/recipe.service';
 import { UserService } from './services/user.service';
@@ -27,7 +26,6 @@ import {AuthguardGuard} from './authguard.guard';
 import { DiaryComponent } from './pages/diary/diary.component';
 import { MyrecipesComponent } from './pages/myrecipes/myrecipes.component';
 import { ErrorComponent } from './pages/error/error.component';
-
 
 @NgModule({
   declarations: [
@@ -58,7 +56,6 @@ import { ErrorComponent } from './pages/error/error.component';
     JsonpModule,
   ],
   providers: [
-    RegistrationService, 
     FoodsearchService, 
     RecipeService,
     UserService,

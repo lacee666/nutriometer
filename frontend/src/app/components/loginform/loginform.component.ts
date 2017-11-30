@@ -18,20 +18,15 @@ export class LoginformComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   loginUser(e){
     e.preventDefault();
     let username = e.target.elements[0].value;
     let password = e.target.elements[1].value;
-    console.log("Before get");
-    this.userService.getUser(username).subscribe(res => this.user = res);
-    console.log(this.user.username);
-    if(username == this.user.username && password == this.user.password){
-      this.userService.setUserLoggedIn(true);
-      this.userService.setThisUser(this.user);
-      this.router.navigate(['profile']);
-    } else{
+    this.user.username = username;
+    this.user.password = password;
+    if(!this.userService.loginUser(this.user)){
       this.errorFlag = true;
     }
-    return false;
   }
 }

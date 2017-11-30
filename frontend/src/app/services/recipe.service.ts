@@ -8,7 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class RecipeService {
 
-  private _url: string = "http://localhost:8080/api/recipe/";
+  private _url: string = "/api/recipe/";
   constructor(public _http: Http, private _jsonp: Jsonp) { 
     console.log("OMEGALUL");
   }
