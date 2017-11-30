@@ -6,5 +6,8 @@
       <input placeholder="UserName" type="text" tabindex="2" required>
       <input placeholder="Password" type="password" tabindex="3" required>
       <input value="submit" type="submit">
+      <div *ngIf="errorFlag">
+        <h3>Registration failed!</h3>
+      </div>
   </form>
 </div>

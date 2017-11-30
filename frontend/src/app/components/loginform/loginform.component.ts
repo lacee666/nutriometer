@@ -10,8 +10,10 @@ import {UserService} from '../../services/user.service';
 })
 export class LoginformComponent implements OnInit {
   user: User;
+  errorFlag: boolean;
   constructor(private router: Router, private userService: UserService) {
     this.user = new User(); 
+    this.errorFlag = false;
   }
 
   ngOnInit() {
@@ -27,6 +29,8 @@ export class LoginformComponent implements OnInit {
       this.userService.setUserLoggedIn(true);
       this.userService.setThisUser(this.user);
       this.router.navigate(['profile']);
+    } else{
+      this.errorFlag = true;
     }
     return false;
   }

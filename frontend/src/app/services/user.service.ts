@@ -36,7 +36,7 @@ export class UserService {
     this.user = user;
     headers.append('Content-Type', 'application/json; charset=utf-8');
     console.log('Register in progress...')
-    return this._http.post(this._url + 'register', JSON.stringify(user), {headers: headers}).map(res => res.json()).catch(this.handleErrorObservable).subscribe();
+    return this._http.post(this._url + 'register', JSON.stringify(user), {headers: headers}).map(res => res.json()).subscribe();
   }
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

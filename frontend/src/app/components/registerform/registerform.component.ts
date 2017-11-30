@@ -11,7 +11,10 @@ import {User} from '../../models/User';
 export class RegisterformComponent implements OnInit {
   user: User;
   userName: string;
-  constructor(private userService : UserService) { }
+  errorFlag: boolean;
+  constructor(private userService : UserService) {
+    this.errorFlag = false;
+  }
 
   ngOnInit() {
     //this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
@@ -27,9 +30,12 @@ export class RegisterformComponent implements OnInit {
     user.username = e.target.elements[1].value;
     user.password = e.target.elements[2].value;
     console.log(JSON.stringify(user));
-    let a = this.userService.registerUser(user);
-    console.log("HE HE");
-    console.log(a);
-    console.log("HE HE XD");
+    try {
+      let a = this.userService.registerUser(user);
+    } catch (error) {
+      this.errorFlag = true;
+      console.log("ERROR SET TO TRUE");
+    }
+    
   }
 }

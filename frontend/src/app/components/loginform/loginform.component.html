@@ -5,6 +5,9 @@
       <input placeholder="Username" type="text" tabindex="1" required autofocus>
       <input placeholder="Password" type="password" tabindex="2" required>
       <input value="Login" type="submit">
+      <div *ngIf="errorFlag">
+        <h3>Login failed!</h3>
+      </div>
   </form>
   <br/>
 </div>
