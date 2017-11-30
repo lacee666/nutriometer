@@ -512,7 +512,7 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
 {
     overflow: hidden;
     padding: 5em 0em;
-    background: #009E2D;
+    background: rgb(158, 76, 0);
     color: rgba(255,255,255,.8);
     text-align: center;
 }

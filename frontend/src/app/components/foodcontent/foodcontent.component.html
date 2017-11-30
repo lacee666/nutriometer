@@ -5,13 +5,11 @@
 <div class="page">
 <div class="nutritiondata">
     <div class="details">
-        <h1>Nutrition Details</h1>
-        <hr/>
-        <div *ngFor="let food of foodList">
-          {{food | json}}
-        </div>
+        <h2>Nutrition Details</h2>
+        <br/>
         
-        <table style="width:100%">
+        
+        <table id="foods" style="width:100%">
           <thead>
             <tr>
               <th>Name</th>
@@ -48,7 +46,7 @@
           </tbody>
         </table>
     </div>
-    <div class="ingredients">
+    <div id="foods" class="ingredients">
         <h1>Ingredients</h1>
         <hr/>
         <table style="width:100%" id="ingredients">
@@ -58,8 +56,8 @@
           </thead>
           <tbody *ngFor="let food of foodList">
             <tr >
-              {{food.name}}
-              {{food.amount}}
+              <th> {{food.name}}</th>
+              <th> {{food.amount}}</th>
             </tr>
           </tbody>
         </table>
@@ -69,7 +67,9 @@
       <button>Save</button>
     </div>
 </div>   
-
+<div *ngFor="let food of foodList">
+    {{food | json}}
+  </div>
 
 </div>
 

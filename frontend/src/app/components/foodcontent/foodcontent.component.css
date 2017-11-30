@@ -31,11 +31,38 @@ input[type=text]:focus {
     border: 2px solid rgb(57, 236, 117);
     width:49%;
     float:right;
-    
+    height: 500px;
+    overflow-y: scroll;
 }
 .clearfix{
     clear:both
 }
 #h1{
     text-align:center;
+}
+
+#foods {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    
+}
+
+#foods td, #foods th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#foods tr:nth-child(even){background-color: #f2f2f2;}
+
+#foods tr:hover {background-color: #ddd;}
+
+#foods th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+h2{
+    background: #4CAF50;
 }

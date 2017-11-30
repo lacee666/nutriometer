@@ -1,12 +1,12 @@
 <div class="recipesearch">
 <app-header></app-header>
-<div class="wrapper" *ngFor="let recipe of recipeList">
+<div class="recipes" *ngFor="let recipe of recipeList">
 	<article class="content">
-		<h1 class="section-title">
+		<h2 class="section-title">
 			{{recipe.name}}
-		</h1>
+		</h2>
 		<div class="foodtext">
-			<span>recipe.detail</span>
+			<span>{{recipe.details}}</span>
 		</div>
 	</article>
 </div>
