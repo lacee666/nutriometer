@@ -24,6 +24,15 @@ export class RegisterformComponent implements OnInit {
   }
   
   onSubmit(){
+    let regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+    if(!regex.test(this.registerModel.email.toString())){
+      this.loginFailedMessage = "Not a valid email!"
+      return;
+    }
+    if(this.registerModel.username.length < 5){
+      this.loginFailedMessage = "Username must be at least 5 characters!"
+      return;
+    }
     if(this.form.valid){
       this.userService.registerUser(this.registerModel)
       .then(() =>{

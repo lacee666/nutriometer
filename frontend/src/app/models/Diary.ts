@@ -1,5 +1,5 @@
 import {Food} from './Food';
 export class Diary{
-    name: String;
+    timestamp: String;
     foods: Array<Food>;
 }

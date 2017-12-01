@@ -5,6 +5,8 @@ import {Observable} from 'rxjs/observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import {Router} from '@angular/router';
+import { Food } from '../models/Food';
+import { Diary } from '../models/Diary';
 
 @Injectable()
 export class UserService {
@@ -49,6 +51,19 @@ export class UserService {
     .then(() => {
       this.setUserLoggedIn(true);
     });     
+  }
+
+  addDiary(diary: Diary){
+    const response : Observable<any> = this.http.post('/api/user/savediary/' + this.user.username, diary);
+    const responsePromise: Promise<any> = response.toPromise();
+    return responsePromise
+    .then(res => res.json())
+    .then(() => {
+      this.router.navigateByUrl('diary');
+    });  
+  }
+  getDiaries(): Observable<Array<Diary>>{
+    return this.http.get('/api/user/diary/' + this.user.username).map((res => res.json()));
   }
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

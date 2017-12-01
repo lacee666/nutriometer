@@ -1,3 +1,13 @@
 <app-header></app-header>
-FUCK YOU DIARY
+<div class="diary" *ngFor="let diary of diaryList">
+	<article class="content">
+		<h2 class="section-title">
+			{{diary.date}}
+		</h2>
+		<div class="foodtext" *ngFor="let food of diary">
+            <span>{{food.name}}</span>
+            <span>{{food.amount}}</span>
+		</div>
+	</article>
+</div>
 <app-footer></app-footer>

@@ -11,13 +11,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-
-    User findByUsername(String username);
-
-    Optional<User> findByUsernameAndPassword(String username, String password);
+public interface DiaryRepository extends CrudRepository<Diary, Long> {
 
     //@Query(value = "select diary from users where username= :uname")
-    Optional<ArrayList<Diary>> findDiaryByUsername(String username);
+    Optional<ArrayList<Diary>> findByUsername(String username);
 }

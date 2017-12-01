@@ -8,12 +8,16 @@ import 'rxjs/Rx';
 @Injectable()
 export class FoodsearchService {
   
-  private _url: string = "/api/food/";
-  constructor(public _http: Http, private _jsonp: Jsonp) { 
-    console.log("OMEGALUL");
+  private url: string = "/api/food";
+  constructor(public http: Http) { 
+    
   }
 
-  getFood(food: Food, foodName: String): Observable<Food>{
-    return this._http.get(this._url + foodName).map((res => res.json()));
+  getFood(food: Food, foodName: String): Promise<Food>{
+    const response : Observable<any> = this.http.get(this.url + '/' + foodName);
+    const responsePromise: Promise<any> = response.toPromise();
+    return responsePromise
+    .then(res => res.json());
+   
   }
 }

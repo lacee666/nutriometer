@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -16,9 +17,13 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Diary extends BaseEntity{
-    @Column
-    public String name;
 
+    @Column(nullable = false)
+    private Timestamp date;
+    @Column(nullable = false)
+    private String username;
+
+    
     @JoinColumn
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Food.class)
     public List<Food> foods;

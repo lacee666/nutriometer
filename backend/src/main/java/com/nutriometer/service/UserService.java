@@ -3,13 +3,17 @@ package com.nutriometer.service;
 
 import com.nutriometer.model.Diary;
 import com.nutriometer.model.Recipe;
+import com.nutriometer.repository.DiaryRepository;
 import com.nutriometer.repository.UserRepository;
 import com.nutriometer.model.User;
 import com.nutriometer.service.exceptions.UserNotValidException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static com.nutriometer.model.User.Role.USER;
 
@@ -18,6 +22,8 @@ import static com.nutriometer.model.User.Role.USER;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private DiaryRepository diaryRepository;
     private User user;
     public User login(User user) throws UserNotValidException {
         if (isValid(user)) {
@@ -51,11 +57,18 @@ public class UserService {
     }
 
     // adding a new daily intake(diary)
-    public void addToDiary(Diary newDiary){
+    public User saveDiary(Diary newDiary, String username){
+        System.out.println("FV-ben");
+        User user = userRepository.findByUsername(username);
+        System.out.println("Found username, adding diary to it.");
+        newDiary.setDate(new Timestamp(System.currentTimeMillis()));
         user.diary.add(newDiary);
-        userRepository.save(user);
+        System.out.println("Diary added.");
+        return userRepository.save(user);
     }
-
+    public ArrayList<Diary> getDiary(String username){
+        return diaryRepository.findByUsername(username).get();
+    }
     public void addToRecipes(Recipe newRecipe){
         user.recipes.add(newRecipe);
         userRepository.save(user);

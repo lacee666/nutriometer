@@ -33,6 +33,6 @@
       </div>
     </div>
     <input type="submit" value="Login"/>
-    <div *ngIf="errorFlag"><h3>Register failed!</h3></div>
+    <div *ngIf="loginFailedMessage"><h3>{{loginFailedMessage}}</h3></div>
   </div>
 </form>
