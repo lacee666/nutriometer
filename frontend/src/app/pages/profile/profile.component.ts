@@ -13,12 +13,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.userService.getUserLoggedIn){
-        this.userService.getThisUser(this.user);
-    }
+
+    this.user = this.userService.getThisUser();
+ 
    
     console.log('bef');
-    console.log(this.user);
+    console.log(this.user.username);
     console.log('aft')
   }
 

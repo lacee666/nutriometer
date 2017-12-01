@@ -33,7 +33,7 @@ public class UserService {
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         */
-        
+
         userRepository.save(user);
         return user;
     }

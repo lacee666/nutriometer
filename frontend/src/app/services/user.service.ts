@@ -21,23 +21,31 @@ export class UserService {
   getUserLoggedIn(): boolean{
     return this.isUserLoggedIn;
   }
-  getThisUser(user: User): Observable<User>{   
-    return this.http.get(this.url + this.user.username).map(res => user = res.json());
+  getThisUser(){   
+    return this.user;
   }
-  setThisUser(user: User): void{
-    this.http.get(this.url + this.user.username).map(res => this.user = res.json());
-  }
+
   getUser(userName: String): Observable<User>{
     console.log(this.url + userName)
     return this.http.get(this.url + userName).map((res => res.json()));
   }
   loginUser(user: User){
+
     const response : Observable<any> = this.http.post(this.url + '/login', user);
     const responsePromise: Promise<any> = response.toPromise();
-    responsePromise
+    return responsePromise
     .then(res => res.json())
+    .then(res => this.user = res) 
+    .then(() => {
+      this.setUserLoggedIn(true);
+    });  
+  }
+  registerUser(user: User): boolean{
+    const response: Observable<any> = this.http.post(this.url + 'register', user);
+    const responsePromise: Promise<any> = response.toPromise();
+    responsePromise
     .then(() =>{
-        this.router.navigate(['/profile']);  
+      this.router.navigate(['/profile']);  
     })
     .catch(() =>{
       return false;
@@ -45,11 +53,6 @@ export class UserService {
     this.setUserLoggedIn(true);
     this.setThisUser(user);
     return true;
-  }
-  registerUser(user: User){
-    this.user = user;
-    const response: Observable<any> = this.http.post(this.url, user);
-    return this.http.post(this.url + '/register', user).subscribe();
   }
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

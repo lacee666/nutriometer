@@ -1,13 +1,30 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<div class="login">  
-  <h2>Login here!</h2>
-  <form id="contact" (submit)="loginUser($event)" method="post">
-      <input placeholder="Username" type="text" tabindex="1" required autofocus>
-      <input placeholder="Password" type="password" tabindex="2" required>
-      <input value="Login" type="submit">
-      <div *ngIf="errorFlag">
-        <h3>Login failed!</h3>
+
+<form #form="ngForm" (submit)="onSubmit()">
+  <div class="login">
+    <h2>Login here!</h2>
+    <div class="form-group">
+    <label for="username">Username:</label>
+      <input type="text"
+            required          
+            name="username" [(ngModel)]="model.username"
+            #username="ngModel" />
+      <div *ngIf="username.invalid && username.touched" >
+        <span *ngIf="username.errors.required">Mandatory field!</span>     
       </div>
-  </form>
-  <br/>
-</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password"           
+            name="password" [(ngModel)]="model.password"
+            #password="ngModel" />
+      <div *ngIf="password.invalid && password.touched" >
+        <span *ngIf="password.errors.required">Mandatory field!</span>     
+      </div>
+    </div>
+    <input type="submit" value="Login"/>
+    <div *ngIf="loginFailedMessage">{{loginFailedMessage}}</div>
+  </div>
+</form>
+
+

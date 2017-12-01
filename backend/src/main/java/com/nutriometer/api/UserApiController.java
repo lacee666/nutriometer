@@ -45,7 +45,7 @@ public class UserApiController {
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
-        System.out.println("POST OKKKK");
+        System.out.println("POST OK");
         return ResponseEntity.ok(userService.register(user));
     }
 
