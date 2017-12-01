@@ -13,7 +13,7 @@ export class UserService {
   user: User;
   constructor(private http: Http, private router: Router) { 
     this.isUserLoggedIn = false;
-    this.user = new User();
+    //this.user = new User();
   }
   setUserLoggedIn(logged: boolean): void{
     this.isUserLoggedIn = logged;
@@ -40,19 +40,15 @@ export class UserService {
       this.setUserLoggedIn(true);
     });  
   }
-  registerUser(user: User): boolean{
-    const response: Observable<any> = this.http.post(this.url + 'register', user);
+  registerUser(user: User){
+    const response : Observable<any> = this.http.post(this.url + '/register', user);
     const responsePromise: Promise<any> = response.toPromise();
-    responsePromise
-    .then(() =>{
-      this.router.navigate(['/profile']);  
-    })
-    .catch(() =>{
-      return false;
-    });
-    this.setUserLoggedIn(true);
-    this.setThisUser(user);
-    return true;
+    return responsePromise
+    .then(res => res.json())
+    .then(res => this.user = res) 
+    .then(() => {
+      this.setUserLoggedIn(true);
+    });     
   }
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

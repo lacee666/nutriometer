@@ -46,7 +46,12 @@ public class UserApiController {
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         System.out.println("POST OK");
-        return ResponseEntity.ok(userService.register(user));
+
+        try {
+            return ResponseEntity.ok(userService.register(user));
+        } catch (UserNotValidException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //@Role({ADMIN, USER})

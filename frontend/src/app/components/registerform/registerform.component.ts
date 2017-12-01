@@ -1,41 +1,39 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {Router} from '@angular/router';
 import {User} from '../../models/User';
+import {UserService} from '../../services/user.service';
+import { Observable } from 'rxjs/observable';
 @Component({
   selector: 'app-registerform',
   templateUrl: './registerform.component.html',
   styleUrls: ['./registerform.component.css'],
-  providers: [UserService],
+  
 })
 
 export class RegisterformComponent implements OnInit {
-  user: User;
-  userName: string;
-  errorFlag: boolean;
-  constructor(private userService : UserService) {
-    this.errorFlag = false;
+  
+  registerModel: User;
+  loginFailedMessage : string;
+  @ViewChild('form') form;
+
+  constructor(private router: Router, private userService: UserService) {
+    this.registerModel = new User(); 
   }
 
   ngOnInit() {
-    //this._regservice.getUser(this.user, "admin").subscribe(user => this.user = user);/*.subscribe((res => this.data = res.text()));*/
-    //console.log(this.user.username);
   }
-  getUser(userName: string): void{
-    //this._regservice.getUser(this.user, userName).subscribe(user => this.user = user);
-  }
-  registerUser(e): void{
-    e.preventDefault();
-    let user: User = new User();
-    user.email = e.target.elements[0].value;
-    user.username = e.target.elements[1].value;
-    user.password = e.target.elements[2].value;
-    console.log(JSON.stringify(user));
-    try {
-      let a = this.userService.registerUser(user);
-    } catch (error) {
-      this.errorFlag = true;
-      console.log("ERROR SET TO TRUE");
+  
+  onSubmit(){
+    if(this.form.valid){
+      this.userService.registerUser(this.registerModel)
+      .then(() =>{
+        this.router.navigateByUrl('/profile');  
+      })
+      .catch(() =>{
+        this.loginFailedMessage = "Login failed!"
+      });
     }
-    
+
   }
+
 }

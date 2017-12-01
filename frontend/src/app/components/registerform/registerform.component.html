@@ -1,13 +1,38 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<div class="register">  
-  <h2>Register here!</h2>
-  <form id="contact" method="post" (submit)="registerUser($event)">
-      <input placeholder="Email" type="text" tabindex="1" required autofocus>
-      <input placeholder="UserName" type="text" tabindex="2" required>
-      <input placeholder="Password" type="password" tabindex="3" required>
-      <input value="submit" type="submit">
-      <div *ngIf="errorFlag">
-        <h3>Registration failed!</h3>
+
+<form #form="ngForm" (submit)="onSubmit()">
+  <div class="register">
+    <h2>Register here!</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+        <input type="text"
+              required          
+              name="email" [(ngModel)]="registerModel.email"
+              #email="ngModel" />
+        <div *ngIf="email.invalid && email.touched" >
+          <span *ngIf="email.errors.required">Mandatory field!</span>     
+        </div>
       </div>
-  </form>
-</div>
+    <div class="form-group">
+    <label for="username">Username:</label>
+      <input type="text"
+            required          
+            name="username" [(ngModel)]="registerModel.username"
+            #username="ngModel" />
+      <div *ngIf="username.invalid && username.touched" >
+        <span *ngIf="username.errors.required">Mandatory field!</span>     
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password"           
+            name="password" [(ngModel)]="registerModel.password"
+            #password="ngModel" />
+      <div *ngIf="password.invalid && password.touched" >
+        <span *ngIf="password.errors.required">Mandatory field!</span>     
+      </div>
+    </div>
+    <input type="submit" value="Login"/>
+    <div *ngIf="errorFlag"><h3>Register failed!</h3></div>
+  </div>
+</form>

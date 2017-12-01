@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public void register(@ModelAttribute User user, Model model) {
+    public void register(@ModelAttribute User user, Model model) throws UserNotValidException {
         userService.register(user);
     }
 

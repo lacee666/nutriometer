@@ -24,10 +24,11 @@ export class LoginformComponent implements OnInit {
   }
   
   onSubmit(){
+    this.model.email = 'FAASY';
     if(this.form.valid){
       this.userService.loginUser(this.model)
       .then(() =>{
-        this.router.navigate(['/profile']);  
+        this.router.navigateByUrl('/profile');  
       })
       .catch(() =>{
         this.loginFailedMessage = "Login failed!"

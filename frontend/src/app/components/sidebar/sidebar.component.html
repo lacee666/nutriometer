@@ -1,14 +1,16 @@
-<div class="dropdown" style="float:right;">
-    <button class="dropbtn">Profile</button>
-    <div class="dropdown-content">
-      <li>
-        <a routerLink="/profile">Profile settings</a>
-      </li>
-      <li>
-        <a routerLink="/diary">My diary</a>
-      </li>
-      <li>
-        <a routerLink="/myrecipes">My Recipes</a>
-      </li>
-    </div>
+<div *ngIf="userLoggedIn">
+  <div class="dropdown" style="float:right;">
+      <button class="dropbtn">Profile</button>
+      <div class="dropdown-content">
+        <li>
+          <a routerLink="/profile">Profile settings</a>
+        </li>
+        <li>
+          <a routerLink="/diary">My diary</a>
+        </li>
+        <li>
+          <a routerLink="/myrecipes">My Recipes</a>
+        </li>
+      </div>
+  </div>
 </div>

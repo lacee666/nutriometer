@@ -26,7 +26,10 @@ public class UserService {
         throw new UserNotValidException();
     }
 
-    public User register(User user){
+    public User register(User user) throws UserNotValidException {
+        if(user.getPassword().length() < 6){
+            throw new UserNotValidException();
+        }
         user.setRole(USER);
         /*
         PasswordEncoder encoder = new BCryptPasswordEncoder();
