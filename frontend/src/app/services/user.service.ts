@@ -54,13 +54,12 @@ export class UserService {
   }
 
   addDiary(diary: Diary){
-    const response : Observable<any> = this.http.post('/api/user/savediary/' + this.user.username, diary);
-    const responsePromise: Promise<any> = response.toPromise();
-    return responsePromise
-    .then(res => res.json())
-    .then(() => {
-      this.router.navigateByUrl('diary');
-    });  
+    try{
+        const response : Observable<any> = this.http.post('/api/user/savediary/' + this.user.username, diary);      
+        const responsePromise: Promise<any> = response.toPromise();
+    }catch(error){
+      console.log('LOOOOOOOOOOOOOOOOL 4HEad')
+    } 
   }
   getDiaries(): Observable<Array<Diary>>{
     return this.http.get('/api/user/diary/' + this.user.username).map((res => res.json()));

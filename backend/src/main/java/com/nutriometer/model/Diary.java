@@ -20,11 +20,13 @@ public class Diary extends BaseEntity{
 
     @Column(nullable = false)
     private Timestamp date;
-    @Column(nullable = false)
+
+    @Column
     private String username;
 
-    
     @JoinColumn
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Food.class)
+    @ManyToMany(cascade = CascadeType.MERGE, targetEntity = Food.class)
+    //@ElementCollection
+    //@Column(name = "USER_FOOD")
     public List<Food> foods;
 }

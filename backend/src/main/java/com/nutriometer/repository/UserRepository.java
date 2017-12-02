@@ -18,6 +18,5 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     Optional<User> findByUsernameAndPassword(String username, String password);
 
-    //@Query(value = "select diary from users where username= :uname")
-    Optional<ArrayList<Diary>> findDiaryByUsername(String username);
+
 }

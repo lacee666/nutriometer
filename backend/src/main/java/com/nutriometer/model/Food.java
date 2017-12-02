@@ -5,9 +5,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -19,8 +19,10 @@ import javax.persistence.Table;
 
 // this class represents a food/ingredient
 public class Food extends BaseEntity {
-
-    @Column(nullable = false, unique = true)
+    @JoinColumn
+    @ManyToMany(cascade = CascadeType.MERGE, targetEntity = Diary.class)
+    private List<Diary> diary;
+    @Column(nullable = false, unique = false)
     private String name;
     @Column
     private float amount;

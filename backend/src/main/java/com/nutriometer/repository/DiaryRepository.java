@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Repository
 public interface DiaryRepository extends CrudRepository<Diary, Long> {
-
-    //@Query(value = "select diary from users where username= :uname")
     Optional<ArrayList<Diary>> findByUsername(String username);
+
 }

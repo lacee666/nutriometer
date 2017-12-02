@@ -18,11 +18,6 @@ public class FoodApiController {
     @Autowired
     private FoodService foodService;
 
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private FoodRepository foodRepository;
 
     @Role({ADMIN, USER})
     @GetMapping("/{foodname}")

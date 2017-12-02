@@ -4,7 +4,7 @@
 		<h2 class="section-title">
 			{{diary.date}}
 		</h2>
-		<div class="foodtext" *ngFor="let food of diary">
+		<div class="foodtext" *ngFor="let food of diary.foods">
             <span>{{food.name}}</span>
             <span>{{food.amount}}</span>
 		</div>

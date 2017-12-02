@@ -69,11 +69,13 @@ public class UserApiController {
     }
 
     @PostMapping("/savediary/{username}")
-    private ResponseEntity<User> saveDiary(@RequestBody Diary diary, @PathVariable String username){
+    private ResponseEntity<Diary> saveDiary(@RequestBody Diary diary, @PathVariable String username){
         try {
             System.out.println("Return elott: " + username + " DIARY: " + diary.toString());
             return ResponseEntity.ok(userService.saveDiary(diary, username));
         }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("WTF POST DIARY");
             return ResponseEntity.badRequest().build();
         }
     }
@@ -84,6 +86,8 @@ public class UserApiController {
             System.out.println("GET DIARY FOR: " + username);
             return ResponseEntity.ok(userService.getDiary(username));
         }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("WTF GET DIARY");
             return ResponseEntity.badRequest().build();
         }
 

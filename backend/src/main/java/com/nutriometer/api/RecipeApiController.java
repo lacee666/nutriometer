@@ -22,13 +22,6 @@ public class RecipeApiController {
     @Autowired
     private RecipeService recipeService;
 
-    @Autowired
-    private FoodService foodService;
-
-    @Autowired
-    private UserService userService;
-
-
     @Role({ADMIN, USER})
     @PostMapping
     private ResponseEntity<Recipe> create(@RequestBody Recipe recipe) {

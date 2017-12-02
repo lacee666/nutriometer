@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 import static com.nutriometer.model.User.Role.USER;
 
@@ -24,6 +22,7 @@ public class UserService {
     private UserRepository userRepository;
     @Autowired
     private DiaryRepository diaryRepository;
+
     private User user;
     public User login(User user) throws UserNotValidException {
         if (isValid(user)) {
@@ -57,14 +56,14 @@ public class UserService {
     }
 
     // adding a new daily intake(diary)
-    public User saveDiary(Diary newDiary, String username){
-        System.out.println("FV-ben");
-        User user = userRepository.findByUsername(username);
-        System.out.println("Found username, adding diary to it.");
+    public Diary saveDiary(Diary newDiary, String username){
+        System.out.println("Found username, adding diary to it. Details: " + this.user.getUsername() + " // " + this.user.getPassword());
         newDiary.setDate(new Timestamp(System.currentTimeMillis()));
-        user.diary.add(newDiary);
-        System.out.println("Diary added.");
-        return userRepository.save(user);
+        newDiary.setUsername(username);
+        this.user.diary.add(newDiary);
+        System.out.println("Diary added to user: " + this.user.getDiary().toString());
+        System.out.println("Saving diary...");
+        return diaryRepository.save(newDiary);
     }
     public ArrayList<Diary> getDiary(String username){
         return diaryRepository.findByUsername(username).get();
