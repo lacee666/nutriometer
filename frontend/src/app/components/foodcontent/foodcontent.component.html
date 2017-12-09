@@ -1,6 +1,7 @@
 <div class="searchfood">
 <input type="text" name="search" placeholder="Search.." #foodName>
-<button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="addFood(foodName.value)">Add food</button>
+<input type="text" name="foodAmount" placeholder="Amount(g)" #foodAmount>
+<button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="addFood(foodName.value, foodAmount.value)">Add food</button>
 </div>
 <div class="page">
 <div class="nutritiondata">

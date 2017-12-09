@@ -19,7 +19,7 @@ import java.util.List;
 public class Diary extends BaseEntity{
 
     @Column(nullable = false)
-    private Timestamp date;
+    private String date;
 
     @Column
     private String username;

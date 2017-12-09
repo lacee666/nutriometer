@@ -19,9 +19,9 @@ import java.util.List;
 
 // this class represents a food/ingredient
 public class Food extends BaseEntity {
-    @JoinColumn
-    @ManyToMany(cascade = CascadeType.MERGE, targetEntity = Diary.class)
-    private List<Diary> diary;
+    //@JoinColumn
+    //@ManyToMany(cascade = CascadeType.MERGE, targetEntity = Diary.class)
+    //private List<Diary> diary;
     @Column(nullable = false, unique = false)
     private String name;
     @Column

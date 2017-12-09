@@ -31,18 +31,25 @@ export class FoodcontentComponent implements OnInit {
     this.currentHolder = [0,0,0,0];
     this.max = 1;
   }
-  addFood(foodName: String): void{
-    this.foodSearchService.getFood(this.newFood, foodName).then(food => this.foodList.push(food));
+  addFood(foodName: String, foodAmount: number): void{
+    this.foodSearchService.getFood(this.newFood, foodName).then(food =>{
+      food.amount = foodAmount;
+      food.calorie = food.calorie * foodAmount / 100.0;
+      food.protein = food.protein * foodAmount / 100.0;
+      food.carbohydrate = food.carbohydrate * foodAmount / 100.0;
+      food.fat = food.fat * foodAmount / 100.0;
+      this.foodList.push(food)
+    });
     console.log(this.foodList[0]);
-    this.countElements(this.foodList[this.foodList.length - 1]);
+    this.countElements(this.foodList[this.foodList.length - 1], foodAmount);
   }
 
-  countElements(element: Food): void{
+  countElements(element: Food, foodAmount: number): void{
       this.currentCalorie += element.calorie;
       this.currentCarb  += element.carbohydrate;
       this.currentFat += element.fat;
       this.currentProtein += element.protein;
-      this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100;
+      this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100.0;
   }
   saveDiary(){
     let diary: Diary = new Diary();

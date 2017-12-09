@@ -30,7 +30,7 @@ public class User extends BaseEntity {
     //@ElementCollection
     //@Column(name = "USER_DIARIES")
     @JoinColumn
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Diary.class)
+    @OneToMany(cascade = CascadeType.PERSIST, targetEntity = Diary.class)
     public List<Diary> diary;
 
     // this list represents the recipes one user has

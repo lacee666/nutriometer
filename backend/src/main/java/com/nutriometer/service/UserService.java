@@ -58,12 +58,12 @@ public class UserService {
     // adding a new daily intake(diary)
     public Diary saveDiary(Diary newDiary, String username){
         System.out.println("Found username, adding diary to it. Details: " + this.user.getUsername() + " // " + this.user.getPassword());
-        newDiary.setDate(new Timestamp(System.currentTimeMillis()));
+        newDiary.setDate(new Timestamp(System.currentTimeMillis()).toString());
         newDiary.setUsername(username);
         this.user.diary.add(newDiary);
         System.out.println("Diary added to user: " + this.user.getDiary().toString());
         System.out.println("Saving diary...");
-        return diaryRepository.save(newDiary);
+        return diaryRepository.save(this.user.getDiary().get(this.user.getDiary().size() - 1));
     }
     public ArrayList<Diary> getDiary(String username){
         return diaryRepository.findByUsername(username).get();
