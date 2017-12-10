@@ -1,5 +1,5 @@
 input[type=text] {
-    width: 130px;
+    width: 400px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -16,19 +16,20 @@ input[type=text] {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 20%;
-}
 
-.details{
-    border: 2px solid rgb(57, 236, 117);
+}
+h2{
+    color: white;
+}
+.details, .ingredients{
+    border: 2px solid rgb(45, 189, 45);
     float: left;
     width:50%;
-    background-color: rgb(82, 197, 149);
+    background-color: #4CAF50;
     
 }
 
 .ingredients{
-    border: 2px solid rgb(57, 236, 117);
     width:49%;
     float:right;
     height: 500px;

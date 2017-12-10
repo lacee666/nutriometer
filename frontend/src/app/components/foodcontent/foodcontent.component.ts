@@ -18,10 +18,12 @@ export class FoodcontentComponent implements OnInit {
   max: number;
   newFood: Food;
   drv: number;
+  currentDRV: number;
   constructor(private foodSearchService: FoodsearchService, private userService: UserService) { }
 
   ngOnInit() {
     this.foodList = new Array<Food>();
+
     this.newFood = new Food();
     this.currentCalorie = 0;
     this.currentCarb = 0;
@@ -30,6 +32,7 @@ export class FoodcontentComponent implements OnInit {
     this.drv = 2000;
     this.currentHolder = [0,0,0,0];
     this.max = 1;
+    this.currentDRV = 0;
   }
   addFood(foodName: String, foodAmount: number): void{
     this.foodSearchService.getFood(this.newFood, foodName).then(food =>{
@@ -38,14 +41,17 @@ export class FoodcontentComponent implements OnInit {
       food.protein = food.protein * foodAmount / 100.0;
       food.carbohydrate = food.carbohydrate * foodAmount / 100.0;
       food.fat = food.fat * foodAmount / 100.0;
+      this.newFood = food;
+      console.log("CALORIE: " + this.newFood.calorie);
+      console.log("CALORIE: " + food.calorie);
       this.foodList.push(food)
+      this.countElements(this.foodList[this.foodList.length - 1], foodAmount);
     });
-    console.log(this.foodList[0]);
-    this.countElements(this.foodList[this.foodList.length - 1], foodAmount);
   }
 
   countElements(element: Food, foodAmount: number): void{
       this.currentCalorie += element.calorie;
+      this.currentDRV = this.currentCalorie / this.drv * 100;
       this.currentCarb  += element.carbohydrate;
       this.currentFat += element.fat;
       this.currentProtein += element.protein;
@@ -56,5 +62,15 @@ export class FoodcontentComponent implements OnInit {
     diary.foods = this.foodList;
     this.userService.addDiary(diary);
   }
-  
+  deleteFood(i: number): void{
+    console.log("click happened");
+    
+    this.currentCalorie -= this.foodList[i].calorie;
+    this.currentDRV = this.currentCalorie / this.drv * 100;
+    this.currentCarb  -= this.foodList[i].carbohydrate;
+    this.currentFat -= this.foodList[i].fat;
+    this.currentProtein -= this.foodList[i].protein;
+    this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100.0;
+    this.foodList.splice(i,1);
+  }
 }

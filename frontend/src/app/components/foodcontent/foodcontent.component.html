@@ -22,25 +22,25 @@
           <tbody>
           <tr>
             <th>Calories</th>
-            <th>{{currentCalorie}}</th>
+            <th>{{currentCalorie | number : '1.2-2' }}</th>
             <th>kcal</th>
-            <th>0</th>
+            <th>{{currentDRV | number : '1.2-2' }}</th>
           </tr>
           <tr>
             <th>Carbs</th>
-            <th>{{currentCarb / max}}</th>
+            <th>{{currentCarb / max |number : '1.2-2' }}</th>
             <th>%</th>
             <th>0</th>
           </tr>
           <tr>
             <th>Fat</th>
-            <th>{{currentFat / max}}</th>
+            <th>{{currentFat / max | number : '1.2-2' }}</th>
             <th>%</th>
             <th>0</th>
           </tr>
           <tr>
             <th>Protein</th>
-            <th>{{currentProtein / max}}</th>
+            <th>{{currentProtein / max | number : '1.2-2' }}</th>
             <th>%</th>
             <th>0</th>
           </tr>
@@ -48,19 +48,19 @@
         </table>
     </div>
     <div id="foods" class="ingredients">
-        <h1>Ingredients</h1>
-        <hr/>
+        <h2>Ingredients</h2>
         <table style="width:100%" id="ingredients">
           <thead>
             <th>Food name</th>
             <th>g</th>
           </thead>
-          <tbody *ngFor="let food of foodList">
+          <tbody *ngFor="let food of foodList let i = index" (click)="deleteFood(i)" [class.active]="i == selectedRow">
             <tr >
               <th> {{food.name}}</th>
-              <th> {{food.amount}}</th>
+              <th> {{food.amount | number : '1.2-2' }}</th>
             </tr>
           </tbody>
+          
         </table>
     </div>
     <div class="clearfix"></div>
