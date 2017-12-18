@@ -22,7 +22,7 @@ Az alkalmazás legyen felhasználóbarát, egyszerű, gyors és megbízható.
 
 ##### Használatieset-modell
 
-![usecase](docs/images/felhasznaloEsetek.jpg)
+![usecase](docs/felhasznaloEsetek.jpg)
 
 ###### Szerepkörök
 
@@ -66,11 +66,11 @@ Bejelentkezett felhasználó:
 
 ###### Adatbázisterv
 
-![Adatbazisterv](docs/images/databaseplan.jpg)
+![Adatbazisterv](docs/databaseplan.jpg)
 
 - A relációk:
 
-![Adatbazisterv](docs/images/databaseplan.jpg)
+![Adatbazisterv](docs/databaseplan.jpg)
 
 ###### Állapotdiagram
 
