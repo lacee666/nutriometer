@@ -23,8 +23,9 @@ public class RecipeApiController {
     private RecipeService recipeService;
 
     @Role({ADMIN, USER})
-    @PostMapping
-    private ResponseEntity<Recipe> create(@RequestBody Recipe recipe) {
+    @PostMapping("/addrecipe")
+    private ResponseEntity<Recipe> addRecipe(@RequestBody Recipe recipe) {
+        System.out.println("WOOP");
         //recipe.setUser(userService.getUserRepository().findByUsername(userService.getUser().getUsername()));
         Recipe saved = recipeService.create(recipe);
         return ResponseEntity.ok(saved);

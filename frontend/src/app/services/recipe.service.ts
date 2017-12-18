@@ -8,12 +8,21 @@ import 'rxjs/Rx';
 @Injectable()
 export class RecipeService {
 
-  private _url: string = "/api/recipe/";
-  constructor(public _http: Http, private _jsonp: Jsonp) { 
+  private url: string = "/api/recipe";
+  constructor(public http: Http) { 
     console.log("OMEGALUL");
   }
 
   getRecipes(): Observable<Array<Recipe>>{
-    return this._http.get(this._url + 'all').map((res => res.json()));
+    return this.http.get(this.url + '/all').map((res => res.json()));
+  }
+
+  addRecipe(recipe: Recipe){
+    try{
+      const response : Observable<any> = this.http.post(this.url + '/addrecipe', recipe);      
+      const responsePromise: Promise<any> = response.toPromise();
+    }catch(error){
+      console.log('LOOOOOOOOOOOOOOOOL 4HEad')
+    } 
   }
 }

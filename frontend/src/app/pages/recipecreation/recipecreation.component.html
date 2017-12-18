@@ -1,0 +1,21 @@
+<div class="contact">
+  <app-header></app-header>
+  <div class="container">
+    <form>
+  
+      <label for="fname">Recipe name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name.." #recipeName>
+  
+  
+      <label for="subject">Recipe</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" #recipeText></textarea>
+  
+      <input type="submit" value="Submit" (click)="addRecipe(recipeName.value, recipeText.value)">
+  
+    </form>
+
+
+    
+  </div>
+  <app-footer></app-footer>
+</div>

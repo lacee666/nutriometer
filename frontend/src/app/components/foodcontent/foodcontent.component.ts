@@ -35,12 +35,15 @@ export class FoodcontentComponent implements OnInit {
     this.currentDRV = 0;
   }
   addFood(foodName: String, foodAmount: number): void{
+    if(!foodAmount){
+      foodAmount = 100;
+    }
     this.foodSearchService.getFood(this.newFood, foodName).then(food =>{
       food.amount = foodAmount;
-      food.calorie = food.calorie * foodAmount / 100.0;
-      food.protein = food.protein * foodAmount / 100.0;
-      food.carbohydrate = food.carbohydrate * foodAmount / 100.0;
-      food.fat = food.fat * foodAmount / 100.0;
+      food.calorie = food.calorie   * foodAmount / 100.0;
+      food.protein = food.protein ;
+      food.carbohydrate = food.carbohydrate ;
+      food.fat = food.fat ;
       this.newFood = food;
       console.log("CALORIE: " + this.newFood.calorie);
       console.log("CALORIE: " + food.calorie);
@@ -52,9 +55,9 @@ export class FoodcontentComponent implements OnInit {
   countElements(element: Food, foodAmount: number): void{
       this.currentCalorie += element.calorie;
       this.currentDRV = this.currentCalorie / this.drv * 100;
-      this.currentCarb  += element.carbohydrate;
-      this.currentFat += element.fat;
-      this.currentProtein += element.protein;
+      this.currentCarb  += element.carbohydrate* foodAmount / 100.0;
+      this.currentFat += element.fat * foodAmount / 100.0;
+      this.currentProtein += element.protein* foodAmount / 100.0;
       this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100.0;
   }
   saveDiary(){
@@ -72,5 +75,10 @@ export class FoodcontentComponent implements OnInit {
     this.currentProtein -= this.foodList[i].protein;
     this.max = (this.currentProtein + this.currentCarb + this.currentFat) / 100.0;
     this.foodList.splice(i,1);
+    if(this.currentCalorie < 0.1){
+      this.currentCarb = 0;
+      this.currentFat = 0;
+      this.currentProtein = 0;
+    }
   }
 }

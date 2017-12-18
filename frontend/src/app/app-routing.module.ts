@@ -11,7 +11,7 @@ import {MyrecipesComponent} from './pages/myrecipes/myrecipes.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {DiaryComponent} from './pages/diary/diary.component';
 import {ErrorComponent } from './pages/error/error.component';
-
+import {RecipecreationComponent } from './pages/recipecreation/recipecreation.component';
 
 //AUTH GUARD
 import {AuthguardGuard} from './authguard.guard';
@@ -26,6 +26,7 @@ const routes: Routes = [
   {   path: 'profile', canActivate: [AuthguardGuard], component: ProfileComponent},
   {   path: 'diary', canActivate: [AuthguardGuard], component: DiaryComponent},
   {   path: 'myrecipes', canActivate: [AuthguardGuard], component: MyrecipesComponent},
+  {   path: 'recipecreation', canActivate: [AuthguardGuard], component: RecipecreationComponent},
   {   path: 'error', component: ErrorComponent},
   {   path: '**', component: IndexComponent },
 ];

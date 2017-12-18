@@ -52,11 +52,19 @@
         <table style="width:100%" id="ingredients">
           <thead>
             <th>Food name</th>
-            <th>g</th>
+            <th>Calories (kcal)</th>
+            <th>Carbs (%)</th>
+            <th>Fat (%)</th>
+            <th>Protein (%)</th>
+            <th>Amount (g)</th>
           </thead>
           <tbody *ngFor="let food of foodList let i = index" (click)="deleteFood(i)" [class.active]="i == selectedRow">
             <tr >
               <th> {{food.name}}</th>
+              <th> {{food.calorie}}</th>
+              <th> {{food.carbohydrate}}</th>
+              <th> {{food.fat}}</th>
+              <th> {{food.protein}}</th>              
               <th> {{food.amount | number : '1.2-2' }}</th>
             </tr>
           </tbody>
@@ -68,9 +76,7 @@
       <input type="button" value="save" (click)="saveDiary()"/>
     </div>
 </div>   
-<div *ngFor="let food of foodList">
-    {{food | json}}
-  </div>
+
 
 </div>
 

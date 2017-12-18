@@ -26,6 +26,7 @@ import {AuthguardGuard} from './authguard.guard';
 import { DiaryComponent } from './pages/diary/diary.component';
 import { MyrecipesComponent } from './pages/myrecipes/myrecipes.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { RecipecreationComponent } from './pages/recipecreation/recipecreation.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ErrorComponent } from './pages/error/error.component';
     DiaryComponent,
     MyrecipesComponent,
     ErrorComponent,
+    RecipecreationComponent,
   ],
   imports: [
     BrowserModule,
