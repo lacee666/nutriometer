@@ -16,7 +16,9 @@ export class RecipeService {
   getRecipes(): Observable<Array<Recipe>>{
     return this.http.get(this.url + '/all').map((res => res.json()));
   }
-
+  getUserRecipes(userName: String): Observable<Array<Recipe>>{
+    return this.http.get(this.url + '/' + userName).map(res => res.json());
+  }
   addRecipe(recipe: Recipe){
     try{
       const response : Observable<any> = this.http.post(this.url + '/addrecipe', recipe);      

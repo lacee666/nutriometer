@@ -3,7 +3,7 @@
 <div class="recipes" *ngFor="let recipe of recipeList">
 	<article class="content">
 		<h2 class="section-title">
-			{{recipe.name}}
+			{{recipe.name}}, by {{recipe.username}}
 		</h2>
 		<div class="foodtext">
 			<span>{{recipe.details}}</span>

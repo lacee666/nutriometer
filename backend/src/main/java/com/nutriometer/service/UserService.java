@@ -57,6 +57,7 @@ public class UserService {
 
     // adding a new daily intake(diary)
     public Diary saveDiary(Diary newDiary, String username){
+        System.out.println("Err elott.");
         System.out.println("Found username, adding diary to it. Details: " + this.user.getUsername() + " // " + this.user.getPassword());
         newDiary.setDate(new Timestamp(System.currentTimeMillis()).toString());
         newDiary.setUsername(username);

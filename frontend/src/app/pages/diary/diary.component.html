@@ -1,13 +1,19 @@
+<div class="diary">
 <app-header></app-header>
-<div class="diary" *ngFor="let diary of diaryList">
-	<article class="content">
+	<article class="diaries" *ngFor="let diary of diaryList">
 		<h2 class="section-title">
-			{{diary.date}}
+			Summary, {{diary.date}}
 		</h2>
+
+		<h3>Calorie: {{diary.calories}}</h3>
+		<h3>Carb: {{diary.carbs}}</h3>
+		<h3>Protein: {{diary.protein}}</h3>
+		<h3>Fat: {{diary.fat}}</h3>
+		<h2>Ingredients</h2>
 		<div class="foodtext" *ngFor="let food of diary.foods">
-            <span>{{food.name}}</span>
-            <span>{{food.amount}}</span>
+		
+		<span>{{food.name}}</span>
 		</div>
 	</article>
-</div>
 <app-footer></app-footer>
+</div>

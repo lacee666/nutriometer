@@ -30,6 +30,9 @@ public class RecipeService {
     public List<Recipe> findAllRecipes(){
         return (List<Recipe>) recipeRepository.findAll();
     }
+    public List<Recipe> findByUsername(String username){
+        return (List<Recipe>) recipeRepository.findByUsername(username);
+    }
     public Recipe read(long id) {
         return recipeRepository.findOne(id);
     }

@@ -13,13 +13,24 @@ VALUES (0, 'yo', 'yomama@sofat.com', 'kappa123', 'USER');
 INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
 VALUES (0, 'broccoli', 100, 70, 80, 16, 4);
 INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
-VALUES (0, 'bread', 100, 500, 60, 16, 24);
+VALUES (0, 'carrot', 100, 41, 89, 6, 5);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'potato', 100, 93, 92, 7, 1);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'rice', 100, 130, 90, 8, 2);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'soychunk', 100, 333, 40, 60, 0);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'sweet potato', 100, 90, 93, 6, 1);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'spinach', 100, 23, 56, 30, 14);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'lentil', 100, 116, 70, 27, 3);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'beans', 100, 139, 74, 24, 2);
+INSERT INTO FOODS (VERSION, NAME, AMOUNT, CALORIE, CARBOHYDRATE, PROTEIN, FAT)
+VALUES (0, 'flax seed', 100, 534, 22, 12, 66);
 
-INSERT INTO RECIPE (VERSION, NAME, DETAILS)
-VALUES (0, 'Brokkolis káposzta', 'hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... ');
 
-INSERT INTO RECIPE (VERSION, NAME, DETAILS)
-VALUES (0, 'RIZSES RIZS', 'hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty... hmm tasty...123 ');
-
-INSERT INTO RECIPE (VERSION, NAME, DETAILS)
-VALUES (0, 'TAHINIS SEITAN', 'FEELSGOODMAN ');
+INSERT INTO RECIPE (VERSION, USERNAME, NAME, DETAILS)
+VALUES (0, 'test','Brokkolis kaposzta', 'Test');

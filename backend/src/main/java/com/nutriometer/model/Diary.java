@@ -24,6 +24,18 @@ public class Diary extends BaseEntity{
     @Column
     private String username;
 
+    @Column
+    private float calories;
+
+    @Column
+    private float carbs;
+
+    @Column
+    private float protein;
+
+    @Column
+    private float fat;
+
     @JoinColumn
     @ManyToMany(cascade = CascadeType.MERGE, targetEntity = Food.class)
     //@ElementCollection

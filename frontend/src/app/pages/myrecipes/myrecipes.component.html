@@ -1,3 +1,15 @@
-<app-header></app-header>
-TAKE IT BOI RECIPE
-<app-footer></app-footer>
+<div class="recipesearch">
+    <app-header></app-header>
+    <div class="recipes" *ngFor="let recipe of recipeList">
+        <article class="content">
+            <h2 class="section-title">
+                {{recipe.name}}
+            </h2>
+            <div class="foodtext">
+                <span>{{recipe.details}}</span>
+            </div>
+        </article>
+    </div>
+    <app-footer></app-footer>
+    </div>
+        

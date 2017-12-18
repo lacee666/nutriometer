@@ -19,6 +19,7 @@ export class FoodcontentComponent implements OnInit {
   newFood: Food;
   drv: number;
   currentDRV: number;
+  findFlag: boolean;
   constructor(private foodSearchService: FoodsearchService, private userService: UserService) { }
 
   ngOnInit() {
@@ -38,18 +39,26 @@ export class FoodcontentComponent implements OnInit {
     if(!foodAmount){
       foodAmount = 100;
     }
-    this.foodSearchService.getFood(this.newFood, foodName).then(food =>{
-      food.amount = foodAmount;
-      food.calorie = food.calorie   * foodAmount / 100.0;
-      food.protein = food.protein ;
-      food.carbohydrate = food.carbohydrate ;
-      food.fat = food.fat ;
-      this.newFood = food;
-      console.log("CALORIE: " + this.newFood.calorie);
-      console.log("CALORIE: " + food.calorie);
-      this.foodList.push(food)
-      this.countElements(this.foodList[this.foodList.length - 1], foodAmount);
-    });
+    try{
+      
+        this.foodSearchService.getFood(this.newFood, foodName).then(food =>{
+        food.amount = foodAmount;
+        food.calorie = food.calorie   * foodAmount / 100.0;
+        food.protein = food.protein ;
+        food.carbohydrate = food.carbohydrate ;
+        food.fat = food.fat ;
+        this.newFood = food;
+        console.log("CALORIE: " + this.newFood.calorie);
+        console.log("CALORIE: " + food.calorie);
+        this.foodList.push(food)
+        this.countElements(this.foodList[this.foodList.length - 1], foodAmount)
+        this.findFlag = false;
+      }).catch(res => this.findFlag = true);
+    } catch(error){
+      console.log("error finding food");
+      this.findFlag = true;
+    }
+    
   }
 
   countElements(element: Food, foodAmount: number): void{
@@ -63,6 +72,10 @@ export class FoodcontentComponent implements OnInit {
   saveDiary(){
     let diary: Diary = new Diary();
     diary.foods = this.foodList;
+    diary.calories = this.currentCalorie;
+    diary.carbs = this.currentCarb/ this.max;
+    diary.protein = this.currentProtein/ this.max;
+    diary.fat = this.currentFat/ this.max;
     this.userService.addDiary(diary);
   }
   deleteFood(i: number): void{

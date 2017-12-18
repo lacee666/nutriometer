@@ -25,15 +25,23 @@ public class RecipeApiController {
     @Role({ADMIN, USER})
     @PostMapping("/addrecipe")
     private ResponseEntity<Recipe> addRecipe(@RequestBody Recipe recipe) {
-        System.out.println("WOOP");
+        System.out.println("Adding recipe...");
         //recipe.setUser(userService.getUserRepository().findByUsername(userService.getUser().getUsername()));
         Recipe saved = recipeService.create(recipe);
+        System.out.println("Recipe added.");
         return ResponseEntity.ok(saved);
     }
 
     @Role({ADMIN, USER})
     @GetMapping("/all")
     private List<Recipe> getAllRecipes(){
+        System.out.println("Getting all recipes");
         return recipeService.findAllRecipes();
+    }
+    @Role({ADMIN, USER})
+    @GetMapping("/{username}")
+    private List<Recipe> getUserRecipes(@PathVariable String username){
+        System.out.println("Getting recipes for:" + username);
+        return recipeService.findByUsername(username);
     }
 }

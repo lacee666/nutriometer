@@ -44,6 +44,7 @@ public class UserApiController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
+        System.out.println("Login...");
         try {
             return ResponseEntity.ok(userService.login(user));
         } catch (UserNotValidException e) {
@@ -53,7 +54,7 @@ public class UserApiController {
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
-        System.out.println("POST OK");
+        System.out.println("Registering user...");
         try {
             return ResponseEntity.ok(userService.register(user));
         } catch (UserNotValidException e) {

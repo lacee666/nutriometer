@@ -2,6 +2,9 @@
 <input type="text" name="search" placeholder="Search.." #foodName>
 <input type="text" name="foodAmount" placeholder="Amount(g)" #foodAmount>
 <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="addFood(foodName.value, foodAmount.value)">Add food</button>
+
+<div *ngIf="findFlag"><h4>Food not found</h4></div>
+
 </div>
 <div class="page">
 <div class="nutritiondata">
@@ -72,8 +75,8 @@
         </table>
     </div>
     <div class="clearfix"></div>
-    <div class= "save">
-      <input type="button" value="save" (click)="saveDiary()"/>
+    <div class= "save" >
+      <input type="button" value="save" (click)="saveDiary()" routerLink="/diary"/>
     </div>
 </div>   
 

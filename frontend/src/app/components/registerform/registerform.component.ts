@@ -39,7 +39,7 @@ export class RegisterformComponent implements OnInit {
         this.router.navigateByUrl('/profile');  
       })
       .catch(() =>{
-        this.loginFailedMessage = "Login failed!"
+        this.loginFailedMessage = "Register failed!"
       });
     }
 

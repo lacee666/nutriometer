@@ -4,11 +4,11 @@
     <form>
   
       <label for="fname">Recipe name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name.." #recipeName>
+      <input type="text" id="fname" name="firstname" placeholder="Recipe name..." #recipeName>
   
   
       <label for="subject">Recipe</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" #recipeText></textarea>
+      <textarea id="subject" name="subject" placeholder="Recipe details..." style="height:200px" #recipeText></textarea>
   
       <input type="submit" value="Submit" (click)="addRecipe(recipeName.value, recipeText.value)">
   

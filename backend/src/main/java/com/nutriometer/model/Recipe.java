@@ -22,6 +22,8 @@ public class Recipe extends BaseEntity{
     @ManyToOne(targetEntity = User.class)
     private User user;
     */
+    @Column
+    public String username;
     @Column(nullable = false)
     public String name;
 
