@@ -1,3 +1,10 @@
+# How to run
+- Clone project
+- You'll need angular4, maven and java 1.8
+- in the backend folder open a cmd, type the command "mvn spring-boot:run"
+- in the frontend folder a cmd, type the command "npm start"
+- you can load the page at localhost:4200
+
 # Nutriometer
 
 ## Bulatovic László NIISXR
