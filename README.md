@@ -17,12 +17,12 @@ viszont felhasználóként el tudjuk menteni, és visszanézni az előző napoka
 
 ##### Nem funkcionális követelmények
 
-Az alkalmazás legyen felhasználóbarát, egyszerű, gyors és megbízható
+Az alkalmazás legyen felhasználóbarát, egyszerű, gyors és megbízható.
 
 
 ##### Használatieset-modell
 
-Folyamatban :D
+![usecase](docs/images/felhasznaloEsetek.jpg)
 
 ###### Szerepkörök
 
@@ -64,11 +64,13 @@ Bejelentkezett felhasználó:
 - GET /recipesearch: keresés a receptek között
 - POST /recipesearch: receptek felküldése
 
-###### Oldalvázlatok
-
-###### Adatmodell
-
 ###### Adatbázisterv
+
+![Adatbazisterv](docs/images/databaseplan.jpg)
+
+- A relációk:
+
+![Adatbazisterv](docs/images/databaseplan.jpg)
 
 ###### Állapotdiagram
 
@@ -78,5 +80,19 @@ Bejelentkezett felhasználó:
 
 #### Felhasználói dokumentáció
 
+* Az alábbi alkalmazás egy étrendöszzeállító programot valósít meg, ahol a felhasználó könnyedén nyomon követheti
+a napi bevitt kalóriákat, zsírokat, proteineket, valamit receptek segítségével biztosíthatja magának az egészséges életvitelt. Miután a szerver és a kliens egyaránt el lett indítva, program a http://localhost:4200/ címen érhető el.
 
+* Első képésként, ajánlott regisztrálni, amit a Sign in/up gombra tehetünk meg, ezt követően meg kell adnunk az e-mail címet,
+felhasználónevet és jelszót, mellyel regisztrálni kívánunk. 
+
+* Következő lépés a bejelentkezés lenne, amit a korábban megadott adatok segítségével tudunk megtenni.
+
+* Bejelentkezés után lehetőségünk van recepteket nézegetni, elmenteni, valamint a napi bevitt kalóriákat kezelni.
+
+* Az alapanyagkeresés a Food Search gombbal érhető el.
+
+* A receptkeresés pedig a Recipe Search gomb segítségével érhető el.
+
+* A vásárlás befejeztével a kijelentkezés gomb megnyomásával hagyható el a felhasználói profil.
 
