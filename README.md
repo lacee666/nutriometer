@@ -70,7 +70,7 @@ Bejelentkezett felhasználó:
 
 - A relációk:
 
-![Adatbazisterv](docs/databaseplan.jpg)
+![Adatbazisterv](docs/relations.jpg)
 
 ###### Állapotdiagram
 
