@@ -21,7 +21,7 @@ export class RecipeService {
   }
   addRecipe(recipe: Recipe){
     try{
-      const response : Observable<any> = this.http.post(this.url + '/addrecipe', recipe);      
+      const response : Observable<any> = this.http.post(this.url + '/addrecipe', recipe.username);      
       const responsePromise: Promise<any> = response.toPromise();
     }catch(error){
       console.log('LOOOOOOOOOOOOOOOOL 4HEad')
