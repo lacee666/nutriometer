@@ -1,16 +1,20 @@
-# How to run
-- Clone project
-- You'll need angular4, maven and java 1.8
-- in the backend folder open a cmd, type the command "mvn spring-boot:run"
-- in the frontend folder a cmd, type the command "npm start"
-- you can load the page at localhost:4200
-
 # Nutriometer
 
 ## Bulatovic László NIISXR
 ## Veress Marcell B30SC5
 
 #### Követelményanalízis
+
+##### Fejlesztőkörnyezet felállítása
+
+- Telepítsük a Git verziókezelőt!
+- Klónozzuk a projektet a gépre.
+    - git clone https://github.com/lacee666/nutriometer.git
+- A futtatáshoz szükséges programok: Angular4, Maven és java 1.8
+- A "backend" mappában nyissunk egy parancssort, majd írjuk be "mvn spring-boot:run"
+- A "frontend" mappában is nyissunk egy parancssort, majd írjuk be "npm start"
+- Be tudjuk tölteni a lapot a localhost:4200 címen
+
 
 ##### Funkcionális követelmények
 
@@ -59,6 +63,11 @@ Bejelentkezett felhasználó:
 	+ napi összmennyiség megtekintése
 	+ mennyiség csökkentése, testmozgás megadásával
 
+###### Alkalmazott könyvtárstruktúra
+
+![konyvtarterv1](docs/konyvtarterv1.jpg)
+![konyvtarterv2](docs/konyvtarterv2.jpg)
+    
 ###### Végpontok
 
 - GET /: index
@@ -71,6 +80,16 @@ Bejelentkezett felhasználó:
 - GET /recipesearch: keresés a receptek között
 - POST /recipesearch: receptek felküldése
 
+###### Használt technológiák, fejlesztői környezetek, programozási nyelvek:
+
+- Verziókezelő rendszer: Git
+- Fejlesztői környezet: IntelliJ IDEA Community Edition
+- Keretrendszer: JAVA Springboot
+- Programozási nyelv(kliensoldal): Angular 2/4
+- Programozási nyelv(szerveroldal): JAVA8
+- Szerveroldali erőforrás menedzser: Lombok
+
+
 ###### Adatbázisterv
 
 ![Adatbazisterv](docs/databaseplan.jpg)
@@ -78,12 +97,6 @@ Bejelentkezett felhasználó:
 - A relációk:
 
 ![Adatbazisterv](docs/relations.jpg)
-
-###### Állapotdiagram
-
-#### Implementáció
-
-#### Tesztelés
 
 #### Felhasználói dokumentáció
 
